@@ -1,0 +1,28 @@
+[
+  {
+    "id": "TSB-TR-2026-002",
+    "index": "01",
+    "title": "Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces",
+    "authors": ["Marvin Mmembe Ngabonzira"],
+    "date": "2026-03",
+    "doi": "10.5281/zenodo.19058469",
+    "zenodo_url": "https://zenodo.org/record/19058469",
+    "type": "Perspective Article",
+    "access": "Open Access",
+    "abstract": "Brain-computer interfaces encode thought, intention, and biological identity into machine-readable signals—creating a class of intimate data without precedent in existing privacy law. This perspective examines the surveillance risk architecture of BCI systems, with particular focus on Sub-Saharan African regulatory contexts where frameworks remain nascent and institutional oversight is limited. We argue that the architecture of BCI data pipelines necessitates a proactive, sovereignty-first approach to neural data governance, and propose foundational design principles for responsible BCI deployment in low- and middle-income country contexts.",
+    "keywords": ["BCI", "neural data privacy", "surveillance", "Africa", "neurotechnology", "data governance"]
+  },
+  {
+    "id": "TSB-TR-2025-001",
+    "index": "02",
+    "title": "Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification",
+    "authors": ["Marvin Mmembe Ngabonzira", "Nayiga Sylvia", "Lukwiya Godfrey Toolit"],
+    "date": "2025-12",
+    "doi": "10.5281/zenodo.19149610",
+    "zenodo_url": "https://zenodo.org/record/19149610",
+    "type": "Technical Report",
+    "access": "Open Access",
+    "abstract": "This report documents the design, construction, and functional verification of an automated first aid kit incorporating an internal ultraviolet-C sterilisation module. The system integrates sensor-actuated dispensing mechanisms with a UV-C irradiation chamber to ensure medical supplies remain sterile between uses—a critical consideration in resource-limited clinical and field settings. Hardware implementation utilises low-cost microcontroller architectures, making the system viable for deployment in Uganda and comparable Sub-Saharan African healthcare environments. Functional verification confirmed effective UV-C dosage delivery and reliable dispensing performance across all test scenarios.",
+    "keywords": ["UV-C sterilisation", "automated first aid", "biomedical engineering", "Uganda", "healthcare", "microcontroller"]
+  }
+]
