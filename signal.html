@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Signal — video breakdowns and research writing from The Science Blueprint. YouTube + Substack.">
+  <meta name="author" content="Marvin Mmembe Ngabonzira">
+  <meta property="og:title" content="The Signal · The Science Blueprint">
+  <meta property="og:url" content="https://myscienceblueprint.com/signal.html">
+  <title>The Signal · The Science Blueprint</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .platform-tab-wrap {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 0;
+    }
+    .platform-tab {
+      padding: 0.65rem 1.25rem;
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: all var(--ease);
+    }
+    .platform-tab:hover { color: var(--cyan); }
+    .platform-tab.active {
+      color: var(--cyan);
+      border-bottom-color: var(--cyan);
+    }
+    .platform-panel { display: none; }
+    .platform-panel.active { display: block; }
+
+    .substack-post-card {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .substack-post-card:first-child { border-top: 1px solid var(--glass-border); }
+    .sp-date { font-size: 0.7rem; color: var(--text-3); margin-bottom: 0.5rem; }
+    .sp-title { font-family: var(--f-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.65rem; line-height: 1.3; }
+    .sp-teaser { font-size: 0.82rem; color: var(--text-2); line-height: 1.85; margin-bottom: 1rem; }
+
+    .channel-banner {
+      background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(255,45,120,0.06));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .channel-banner-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: var(--bg-3);
+      border: 2px solid var(--glass-border);
+      padding: 8px;
+      flex-shrink: 0;
+    }
+    .channel-banner-info { flex: 1; }
+    .channel-banner-name { font-family: var(--f-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .channel-banner-sub { font-size: 0.8rem; color: var(--text-2); }
+
+    #substack-list { min-height: 200px; }
+    #substack-list .loading {
+      text-align: center;
+      color: var(--text-3);
+      font-size: 0.8rem;
+      padding: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="The Science Blueprint home">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="signal.html"  class="nav-link nav-link--active">The Signal</a></li>
+      <li><a href="archive.html" class="nav-link">Archive</a></li>
+      <li><a href="about.html"   class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__tag">The Signal · Video + Writing</div>
+    <h1 class="page-hero__title">Every Breakdown.<br>Every Dispatch.</h1>
+    <p class="page-hero__sub">
+      Research explanations on YouTube, and longer-form research notes on Substack.
+      This is where the science gets communicated.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════ SIGNAL BODY ═══════════ -->
+<section class="section" id="signal">
+  <div class="container">
+
+    <!-- Platform Tabs -->
+    <div class="platform-tab-wrap fade-in" role="tablist">
+      <button class="platform-tab active" data-tab="video" role="tab" aria-selected="true">YouTube</button>
+      <button class="platform-tab" data-tab="substack" role="tab" aria-selected="false">Substack</button>
+    </div>
+
+    <!-- ── VIDEO TAB ── -->
+    <div class="platform-panel active" id="panel-video" role="tabpanel">
+      <div class="channel-banner fade-in">
+        <img src="assets/logo.png" alt="TSB YouTube Channel" class="channel-banner-logo">
+        <div class="channel-banner-info">
+          <div class="channel-banner-name">The Science Blueprint</div>
+          <div class="channel-banner-sub">6 subscribers · Breaking down neuroengineering and biomedical science from Uganda</div>
+        </div>
+        <a href="https://www.youtube.com/@thescienceblueprint" target="_blank" rel="noopener" class="btn btn-magenta" style="flex-shrink:0;">
+          Subscribe on YouTube ↗
+        </a>
+      </div>
+
+      <div class="video-grid" id="video-grid">
+        <!-- Loaded by main.js -->
+        <div style="grid-column:1/-1;text-align:center;color:var(--text-3);font-size:0.8rem;padding:3rem 0;">
+          Loading videos…
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SUBSTACK TAB ── -->
+    <div class="platform-panel" id="panel-substack" role="tabpanel">
+      <div class="channel-banner fade-in">
+        <img src="assets/logo.png" alt="TSB Substack" class="channel-banner-logo">
+        <div class="channel-banner-info">
+          <div class="channel-banner-name">The Blueprint</div>
+          <div class="channel-banner-sub">Research notes, ideas, and breakdowns — free on Substack</div>
+        </div>
+        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta" style="flex-shrink:0;">
+          Subscribe on Substack ↗
+        </a>
+      </div>
+
+      <div id="substack-list">
+        <div class="loading">Loading posts…</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">Open-access science communication from Kampala, Uganda.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@thescienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube">YT</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack">SS</a>
+          <a href="https://www.linkedin.com/in/marvin-ngabonzira" target="_blank" rel="noopener" class="footer-social" title="LinkedIn">LI</a>
+          <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener" class="footer-social" title="Zenodo">ZN</a>
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="footer-social" title="ORCID">ID</a>
+          <a href="https://github.com/ngabonziramarvin" target="_blank" rel="noopener" class="footer-social" title="GitHub">GH</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener">Zenodo</a>
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener">ORCID</a>
+          <a href="mailto:marvin@myscienceblueprint.com">Email</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 The Science Blueprint · Marvin Mmembe Ngabonzira</span>
+      <span class="footer-doc-id">ORCID: 0009-0000-2708-2825 · Kampala, Uganda</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Tab switching
+  document.querySelectorAll('.platform-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-tab');
+
+      document.querySelectorAll('.platform-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.platform-panel').forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById('panel-' + target).classList.add('active');
+
+      // Load Substack on first open
+      if (target === 'substack' && !window._substackLoaded) {
+        loadSubstack();
+        window._substackLoaded = true;
+      }
+    });
+  });
+
+  // Load Substack RSS via proxy
+  function loadSubstack() {
+    const list = document.getElementById('substack-list');
+    const feed = 'https://myscienceblueprint.substack.com/feed';
+    const api  = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}&count=10`;
+
+    fetch(api)
+      .then(r => r.json())
+      .then(data => {
+        if (data.status === 'ok' && data.items?.length) {
+          list.innerHTML = data.items.map(item => {
+            const date = new Date(item.pubDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+            const teaser = item.description?.replace(/<[^>]*>/g, '').slice(0, 220) + '…' || '';
+            return `
+              <div class="substack-post-card">
+                <div class="sp-date">${date}</div>
+                <div class="sp-title">${item.title}</div>
+                <p class="sp-teaser">${teaser}</p>
+                <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.72rem;">
+                  Read on Substack ↗
+                </a>
+              </div>
+            `;
+          }).join('');
+        } else {
+          list.innerHTML = renderNoPostsYet();
+        }
+      })
+      .catch(() => { list.innerHTML = renderNoPostsYet(); });
+  }
+
+  function renderNoPostsYet() {
+    return `
+      <div class="substack-post-card">
+        <div class="sp-date">Coming soon</div>
+        <div class="sp-title">The first dispatch is being written</div>
+        <p class="sp-teaser">
+          Subscribe to The Blueprint on Substack to be the first to know when the inaugural
+          research note goes live. Free, no spam, easy to unsubscribe.
+        </p>
+        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.72rem;">
+          Subscribe ↗
+        </a>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>

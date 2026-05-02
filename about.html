@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Marvin Ngabonzira — founder of The Science Blueprint, Mechatronics and Biomedical Engineering student at Kyambogo University, Uganda.">
+  <meta name="author" content="Marvin Mmembe Ngabonzira">
+  <meta property="og:title" content="About · The Science Blueprint">
+  <meta property="og:url" content="https://myscienceblueprint.com/about.html">
+  <title>About · The Science Blueprint</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .interest-tag {
+      display: inline-flex;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--glass-border);
+      color: var(--text-2);
+      background: var(--glass);
+      margin: 0.2rem;
+    }
+
+    .principle-row {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .principle-row:first-child { border-top: 1px solid var(--glass-border); }
+
+    .principle-num {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      color: var(--cyan);
+      padding-top: 0.15rem;
+    }
+    .principle-text {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    .tsb-pillar {
+      padding: 1.5rem;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      background: var(--glass);
+    }
+    .pillar-name {
+      font-family: var(--f-head);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .pillar-desc {
+      font-size: 0.8rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="The Science Blueprint home">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="signal.html"  class="nav-link">The Signal</a></li>
+      <li><a href="archive.html" class="nav-link">Archive</a></li>
+      <li><a href="about.html"   class="nav-link nav-link--active">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__tag">About · The Blueprint</div>
+    <h1 class="page-hero__title">The Person Behind the Blueprint</h1>
+    <p class="page-hero__sub">
+      A third-year engineering student building open science infrastructure from Kampala —
+      one paper, one video, one breakdown at a time.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════ FOUNDER ═══════════ -->
+<section class="section" id="founder">
+  <div class="container">
+    <div class="about-founder-grid">
+
+      <!-- Photo -->
+      <div class="founder-photo-wrap fade-in" style="max-width:320px;">
+        <img
+          src="assets/profile.webp"
+          alt="Marvin Mmembe Ngabonzira — Founder, The Science Blueprint"
+          class="founder-photo"
+          width="320"
+          loading="eager">
+        <div class="founder-photo-ring" aria-hidden="true"></div>
+        <!-- ORCID chip below photo -->
+        <div style="margin-top:1.25rem;">
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="orcid-chip">
+            <span style="color:var(--cyan);font-weight:700;">iD</span>
+            0009-0000-2708-2825
+          </a>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="fade-in">
+        <div class="section-label">Founder</div>
+        <h2 style="margin-bottom:1.25rem;">Marvin Mmembe Ngabonzira</h2>
+
+        <p style="color:var(--text-2);font-size:0.9rem;line-height:1.9;margin-bottom:1.25rem;">
+          I am a third-year Mechatronics and Biomedical Engineering student at Kyambogo University,
+          Kampala, Uganda — working at the intersection of brain-computer interfaces,
+          assistive technology, and the question of what it means to do rigorous science with limited resources.
+        </p>
+
+        <p style="color:var(--text-2);font-size:0.9rem;line-height:1.9;margin-bottom:1.5rem;">
+          The Science Blueprint exists because I could not find science communication that spoke to
+          people building in contexts like mine — where lab equipment is scarce, internet is patchy,
+          and the nearest expert is on the other side of the world. So I started building it myself.
+        </p>
+
+        <div class="constraint-block">
+          <strong>Current research:</strong> A-MDRM (Adaptive Minimum Distance to Riemannian Mean) —
+          a BCI classifier for motor-imagery EEG signals under pseudo-realistic noisy conditions,
+          using Riemannian geometry. Final Year Project, Kyambogo University.
+        </div>
+
+        <div class="constraint-block">
+          <strong>Supervisors:</strong> Mr. Bagaiga Richard (BCI research) ·
+          Dr. Kafeero Hussein (Assistive Technology, Kyambogo University)
+        </div>
+
+        <div class="constraint-block">
+          <strong>Target (2028):</strong> Global Korea Scholarship — Master's in Neuroengineering,
+          South Korea. Language acquisition in progress: Korean (TOPIK II Level 4 target).
+        </div>
+
+        <!-- Research interests -->
+        <div style="margin-top:1.5rem;margin-bottom:0.5rem;">
+          <div class="section-label">Research Interests</div>
+        </div>
+        <div>
+          <span class="interest-tag">Brain-Computer Interfaces</span>
+          <span class="interest-tag">Neural Data Privacy</span>
+          <span class="interest-tag">Riemannian Geometry</span>
+          <span class="interest-tag">Assistive Technology</span>
+          <span class="interest-tag">EEG Signal Processing</span>
+          <span class="interest-tag">Neuroengineering</span>
+          <span class="interest-tag">Science Communication</span>
+          <span class="interest-tag">Open Access</span>
+          <span class="interest-tag">Low-resource Innovation</span>
+        </div>
+
+        <!-- Actions -->
+        <div style="margin-top:2rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.72rem;">
+            ORCID Profile ↗
+          </a>
+          <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.72rem;">
+            Zenodo Repo ↗
+          </a>
+          <a href="mailto:marvin@myscienceblueprint.com" class="btn btn-ghost" style="font-size:0.72rem;">
+            marvin@myscienceblueprint.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TSB PILLARS ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Architecture</div>
+      <h2>How The Blueprint is Built</h2>
+      <p class="text-2" style="font-size:0.875rem;margin-top:0.5rem;">Three pillars. One mission.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="tsb-pillar fade-in">
+        <div class="pillar-name">The Signal</div>
+        <div class="pillar-desc">
+          Video and written breakdowns of research, engineering concepts, and ideas in neuroengineering and biomedical technology.
+          YouTube + Substack.
+        </div>
+      </div>
+      <div class="tsb-pillar fade-in">
+        <div class="pillar-name">The Archive</div>
+        <div class="pillar-desc">
+          Peer-reviewed and documented original research, technical reports, and perspective pieces.
+          All works are open-access and permanently archived on Zenodo with DOIs.
+        </div>
+      </div>
+      <div class="tsb-pillar fade-in">
+        <div class="pillar-name">Blueprint Commons</div>
+        <div class="pillar-desc">
+          Frameworks, tools, and resources for scientists, engineers, and students building in
+          resource-constrained contexts. Open-source wherever possible.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PHILOSOPHY PRINCIPLES ═══════════ -->
+<section class="section" id="philosophy">
+  <div class="container">
+    <div style="max-width:700px;" class="fade-in">
+      <div class="section-label">The Lucid Standard</div>
+      <h2 style="margin-bottom:0.75rem;">How I Work</h2>
+      <p class="text-2" style="font-size:0.875rem;margin-bottom:2.5rem;">
+        A set of working principles formalized as <em>The Lucid Standard v1.0</em>.
+        Twelve commitments I hold myself to in research, communication, and building.
+      </p>
+
+      <div class="principle-row">
+        <div class="principle-num">01</div>
+        <div class="principle-text">Publish everything. Withholding knowledge is waste.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">02</div>
+        <div class="principle-text">Open access is not charity. It is the correct default.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">03</div>
+        <div class="principle-text">Constraints are not excuses. They are parameters to engineer around.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">04</div>
+        <div class="principle-text">Clarity is a form of respect for the reader.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">05</div>
+        <div class="principle-text">Build in public. The work is not finished when it is done — it is finished when it is understood.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">06</div>
+        <div class="principle-text">Context is not an afterthought. African science needs African framing.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">07</div>
+        <div class="principle-text">Intellectual honesty over comfort, every time.</div>
+      </div>
+      <div class="principle-row">
+        <div class="principle-num">08</div>
+        <div class="principle-text">The standard is the blueprint. Not the result — the methodology.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section--sm" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="newsletter-wrap fade-in" style="max-width:640px;margin:0 auto;">
+      <div class="section-label" style="justify-content:center;">Work With Me</div>
+      <h3 style="margin-bottom:0.75rem;">Want to collaborate, cite, or just talk?</h3>
+      <p class="text-2" style="font-size:0.875rem;margin-bottom:1.75rem;">
+        Research collaboration, media enquiries, student outreach, or questions about the work — reach out directly.
+      </p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Send a message</a>
+        <a href="mailto:marvin@myscienceblueprint.com" class="btn btn-ghost" style="font-size:0.8rem;">
+          marvin@myscienceblueprint.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">Open-access science communication and research from Kampala, Uganda.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@thescienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube">YT</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack">SS</a>
+          <a href="https://www.linkedin.com/in/marvin-ngabonzira" target="_blank" rel="noopener" class="footer-social" title="LinkedIn">LI</a>
+          <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener" class="footer-social" title="Zenodo">ZN</a>
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="footer-social" title="ORCID">ID</a>
+          <a href="https://github.com/ngabonziramarvin" target="_blank" rel="noopener" class="footer-social" title="GitHub">GH</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack Newsletter</a>
+          <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener">Zenodo Repository</a>
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener">ORCID Profile</a>
+          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 The Science Blueprint · Marvin Mmembe Ngabonzira</span>
+      <span class="footer-doc-id">ORCID: 0009-0000-2708-2825 · Kampala, Uganda</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
