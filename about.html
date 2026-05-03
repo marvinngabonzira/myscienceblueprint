@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About The Science Blueprint â€” what it is, why it exists, and who builds it.">
+  <title>About Â· The Science Blueprint</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .why-block {
+      border-left: 2px solid var(--cyan);
+      padding: 1.25rem 1.5rem;
+      background: var(--cyan-05);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1.25rem;
+      font-size: .9rem;
+      color: var(--text-2);
+      line-height: 1.85;
+    }
+    .why-block strong { color: var(--text); font-weight: 600; }
+
+    .pillar-card {
+      padding: 1.75rem;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      background: var(--glass);
+      transition: border-color var(--ease-md);
+    }
+    .pillar-card:hover { border-color: var(--glass-border-h); }
+    .pillar-num { font-family: var(--f-mono); font-size: .6rem; color: var(--text-3); letter-spacing: .14em; margin-bottom: .5rem; }
+    .pillar-name { font-family: var(--f-head); font-size: .9rem; font-weight: 700; color: var(--cyan); margin-bottom: .6rem; }
+    .pillar-desc { font-size: .82rem; color: var(--text-2); line-height: 1.75; }
+
+    .founder-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .founder-img-wrap { position: relative; }
+    .founder-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--glass-border);
+      display: block;
+    }
+    .founder-img-ring {
+      position: absolute; inset: -8px;
+      border: 1px solid var(--cyan-15);
+      border-radius: calc(var(--radius-lg) + 8px);
+      pointer-events: none;
+    }
+
+    .founder-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+
+    .fact-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: .75rem 1.25rem;
+      padding: .85rem 0;
+      border-bottom: 1px solid var(--glass-border);
+      font-size: .82rem;
+      align-items: start;
+    }
+    .fact-row:first-child { border-top: 1px solid var(--glass-border); }
+    .fact-label { font-family: var(--f-mono); font-size: .62rem; color: var(--text-3); letter-spacing: .1em; text-transform: uppercase; padding-top: .05rem; }
+    .fact-value { color: var(--text-2); line-height: 1.6; }
+
+    @media (max-width: 700px) {
+      .founder-card { grid-template-columns: 1fr; }
+      .founder-img { max-width: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- â•â•â• NAV â•â•â• -->
+<nav class="nav" id="main-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="signal.html"   class="nav-link">The Signal</a></li>
+      <li><a href="archive.html"  class="nav-link">Archive</a></li>
+      <li><a href="products.html" class="nav-link">Products</a></li>
+      <li><a href="about.html"    class="nav-link nav-link--active">About</a></li>
+      <li><a href="contact.html"  class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">â˜€</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- â•â•â• PAGE HERO â•â•â• -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__tag">About</div>
+    <h1 class="page-hero__title">Who is behind this?</h1>
+    <p class="page-hero__sub">
+      A Mechatronics and Biomedical Engineering student at Kyambogo University
+      in Kampala, Uganda â€” building TSB around the science he finds most fascinating.
+    </p>
+  </div>
+</div>
+
+<!-- â•â•â• ORIGIN â•â•â• -->
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    <div class="section-header fade-in">
+      <div class="section-label">The Origin</div>
+      <h2 style="margin-bottom:1.5rem;">Why The Science Blueprint exists.</h2>
+    </div>
+
+    <div class="why-block fade-in">
+      My name is Marvin Ngabonzira. I am a Mechatronics and Biomedical Engineering student
+      at Kyambogo University in Kampala, Uganda.
+    </div>
+
+    <p class="text-2 fade-in" style="font-size:.9rem;line-height:1.95;margin-bottom:1.25rem;">
+      I have been fascinated by science since I was old enough to pull books on planets off a
+      library shelf. Physics pulled me in during high school. The brain never really let go.
+      BCIs are where those two things finally made sense together: the engineering of human-machine
+      interfaces, the signal processing, the architecture of systems that read and write to the
+      most complicated structure in the known universe.
+    </p>
+
+    <p class="text-2 fade-in" style="font-size:.9rem;line-height:1.95;margin-bottom:1.25rem;">
+      The Science Blueprint started because I kept talking about this stuff to anyone who would
+      listen, and the response was always the same: <em style="color:var(--text);">you make this sound exciting.</em>
+      That is the job now. Science I love, in the domain I find most fascinating,
+      in a language that makes it accessible to everyone who is genuinely curious.
+    </p>
+  </div>
+</section>
+
+<!-- â•â•â• THREE PILLARS â•â•â• -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Structure</div>
+      <h2>How The Blueprint is organised</h2>
+    </div>
+    <div class="grid-3">
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">01 Â· Platform</div>
+        <div class="pillar-name">The Signal</div>
+        <div class="pillar-desc">
+          Science communication about neurotech, BCIs, and brain-machine engineering.
+          YouTube for the big ideas. Substack for the full cited depth. LinkedIn for one focused technical insight a week.
+        </div>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">02 Â· Research</div>
+        <div class="pillar-name">The Archive</div>
+        <div class="pillar-desc">
+          TSB's academic face. Technical reports, framework documents, and research papers.
+          Published with DOIs and permanently free to read, share, and cite.
+          We publish when genuine research exists â€” not to fill a schedule.
+        </div>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">03 Â· Products</div>
+        <div class="pillar-name">TSB Products</div>
+        <div class="pillar-desc">
+          Tools, guides, and resources built from real study and real work in this field.
+          Nothing sold here is something we have not tested, applied, or personally validated.
+          <span style="color:var(--text-3);font-size:.75rem;display:block;margin-top:.6rem;">
+            <a href="products.html" style="color:var(--cyan);">Browse Products â†’</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â• THE FOUNDER â•â•â• -->
+<section class="section" id="founder">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Who builds it</div>
+      <h2 style="margin-bottom:2rem;">The Founder</h2>
+    </div>
+    <div class="founder-card fade-in">
+      <div class="founder-img-wrap">
+        <img src="assets/profile.webp"
+             alt="Marvin Mmembe Ngabonzira"
+             class="founder-img"
+             width="220" loading="eager">
+        <div class="founder-img-ring" aria-hidden="true"></div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:.25rem;">Marvin Mmembe Ngabonzira</h3>
+        <p style="font-family:var(--f-mono);font-size:.72rem;color:var(--cyan);margin-bottom:1.5rem;">
+          Founder Â· The Science Blueprint
+        </p>
+
+        <div class="fact-row">
+          <span class="fact-label">Background</span>
+          <span class="fact-value">Mechatronics and Biomedical Engineering â€” third year</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Current work</span>
+          <span class="fact-value">A-MDRM BCI classifier â€” motor-imagery EEG under noise, using Riemannian geometry</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Focus areas</span>
+          <span class="fact-value">Brain-computer interfaces Â· Neural data privacy Â· Assistive technology Â· Neuroengineering in low-resource settings</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Published</span>
+          <span class="fact-value">2 open-access works â€” Zenodo Â· DOI-linked</span>
+        </div>
+
+        <p style="font-size:.875rem;color:var(--text-2);line-height:1.9;margin-top:1.5rem;">
+          I have been fascinated by science since I was old enough to pull books on planets
+          off a library shelf. Physics pulled me in during high school.
+          The brain never really let go.
+        </p>
+        <p style="font-size:.875rem;color:var(--text-2);line-height:1.9;margin-top:1rem;">
+          BCIs are where those two things finally made sense together: the engineering of
+          human-machine interfaces, the signal processing, the architecture of systems that
+          read and write to the most complicated structure in the known universe.
+        </p>
+
+        <div class="founder-links">
+          <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.72rem;">
+            ORCID â†—
+          </a>
+          <a href="archive.html" class="btn btn-outline" style="font-size:.72rem;">
+            Publications â†’
+          </a>
+          <a href="mailto:marvin@myscienceblueprint.com" class="btn btn-ghost" style="font-size:.72rem;">
+            marvin@myscienceblueprint.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â• CTA â•â•â• -->
+<section class="section--sm" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="newsletter-wrap fade-in" style="max-width:580px;margin:0 auto;">
+      <div class="section-label" style="justify-content:center;">Get in touch</div>
+      <h3 style="margin-bottom:.75rem;">Whether you are a curious student, a researcher, or someone who just finished a video and has a question â€” we want to hear from you.</h3>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="contact.html" class="btn btn-primary">Send a message</a>
+        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-ghost">Subscribe on Substack â†—</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â• FOOTER â•â•â• -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">Open-access science communication in neuroscience, neurotech, and neuroengineering.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack" aria-label="Substack">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          </a>
+          <a href="mailto:marvin@myscienceblueprint.com" class="footer-social" title="Email" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">Â© 2026 The Science Blueprint</span>
+      <span class="footer-doc-id">myscienceblueprint.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+

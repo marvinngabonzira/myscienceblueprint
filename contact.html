@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact The Science Blueprint â€” research collaboration, media, general enquiries.">
+  <title>Contact Â· The Science Blueprint</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .tally-wrap {
+      background:var(--glass); border:1px solid var(--glass-border);
+      border-radius:var(--radius-lg); overflow:hidden; min-height:580px;
+    }
+    .tally-setup-note {
+      padding:2rem; text-align:center;
+      font-family:var(--f-mono); font-size:.75rem; color:var(--text-3); line-height:1.8;
+    }
+    .tally-setup-note code {
+      background:var(--bg-3); padding:.15rem .4rem; border-radius:4px;
+      color:var(--cyan); font-size:.72rem;
+    }
+    .cdi {
+      display:flex; align-items:center; gap:1rem;
+      padding:1.1rem 0; border-bottom:1px solid var(--glass-border);
+      text-decoration:none;
+    }
+    .cdi:first-child { border-top:1px solid var(--glass-border); }
+    .cdi:hover .cdi-label { color:var(--cyan); }
+    .cdi-icon {
+      width:38px; height:38px; border-radius:8px;
+      background:var(--cyan-10); border:1px solid var(--cyan-25);
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--f-mono); font-size:.65rem; font-weight:700;
+      color:var(--cyan); flex-shrink:0;
+    }
+    .cdi-meta { font-family:var(--f-mono); font-size:.6rem; color:var(--text-3); letter-spacing:.1em; text-transform:uppercase; }
+    .cdi-label { font-size:.85rem; color:var(--text); transition:color var(--ease); word-break:break-all; }
+    .cdi-arrow { color:var(--text-3); font-size:.75rem; flex-shrink:0; margin-left:auto; }
+  </style>
+</head>
+<body>
+
+<!-- â•â•â• NAV â•â•â• -->
+<nav class="nav" id="main-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="signal.html"   class="nav-link">The Signal</a></li>
+      <li><a href="archive.html"  class="nav-link">Archive</a></li>
+      <li><a href="products.html" class="nav-link">Products</a></li>
+      <li><a href="about.html"    class="nav-link">About</a></li>
+      <li><a href="contact.html"  class="nav-link nav-link--active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">â˜€</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- â•â•â• PAGE HERO â•â•â• -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__tag">Contact</div>
+    <h1 class="page-hero__title">Get in touch.</h1>
+    <p class="page-hero__sub">
+      Whether you are a curious student, a researcher, or someone who just finished
+      a video and has a question â€” we want to hear from you.
+    </p>
+  </div>
+</div>
+
+<!-- â•â•â• CONTACT â•â•â• -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Tally form -->
+      <div class="fade-in">
+        <div class="section-label" style="margin-bottom:1.25rem;">Send a Message</div>
+        <div class="tally-wrap" id="tally-container">
+          <iframe data-tally-src="https://tally.so/embed/J98D1R?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="784" frameborder="0" marginheight="0" marginwidth="0" title="Get in touch"></iframe>
+        </div>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      </div>
+
+      <!-- Direct contact -->
+      <div class="fade-in">
+        <div class="section-label" style="margin-bottom:1.25rem;">Direct Contact</div>
+
+        <a href="mailto:marvin@myscienceblueprint.com" class="cdi">
+          <div class="cdi-icon">@</div>
+          <div>
+            <div class="cdi-meta">Email</div>
+            <div class="cdi-label">marvin@myscienceblueprint.com</div>
+          </div>
+          <div class="cdi-arrow">â†—</div>
+        </a>
+
+        <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="cdi">
+          <div class="cdi-icon">YT</div>
+          <div>
+            <div class="cdi-meta">YouTube</div>
+            <div class="cdi-label">@myscienceblueprint</div>
+          </div>
+          <div class="cdi-arrow">â†—</div>
+        </a>
+
+        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="cdi">
+          <div class="cdi-icon">SS</div>
+          <div>
+            <div class="cdi-meta">Substack</div>
+            <div class="cdi-label">myscienceblueprint.substack.com</div>
+          </div>
+          <div class="cdi-arrow">â†—</div>
+        </a>
+
+        <!-- What I respond to -->
+        <div class="glass-card" style="margin-top:2rem;padding:1.5rem;">
+          <h4 style="font-size:.9rem;margin-bottom:1rem;">What this inbox is for</h4>
+          <ul style="display:flex;flex-direction:column;gap:.65rem;">
+            <li style="font-size:.82rem;color:var(--text-2);display:flex;gap:.6rem;">
+              <span style="color:var(--cyan);flex-shrink:0;">â†’</span>
+              Research collaboration and co-authorship
+            </li>
+            <li style="font-size:.82rem;color:var(--text-2);display:flex;gap:.6rem;">
+              <span style="color:var(--cyan);flex-shrink:0;">â†’</span>
+              Questions about published work or methods
+            </li>
+            <li style="font-size:.82rem;color:var(--text-2);display:flex;gap:.6rem;">
+              <span style="color:var(--cyan);flex-shrink:0;">â†’</span>
+              Media and press enquiries
+            </li>
+            <li style="font-size:.82rem;color:var(--text-2);display:flex;gap:.6rem;">
+              <span style="color:var(--cyan);flex-shrink:0;">â†’</span>
+              Speaking and contribution invitations
+            </li>
+            <li style="font-size:.82rem;color:var(--text-2);display:flex;gap:.6rem;">
+              <span style="color:var(--cyan);flex-shrink:0;">â†’</span>
+              General questions about the work
+            </li>
+          </ul>
+          <p style="font-size:.72rem;color:var(--text-3);margin-top:1.25rem;line-height:1.7;">
+            I aim to respond within 48â€“72 hours.
+            During active academic deadlines, it may take longer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â• FOOTER â•â•â• -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">Open-access science communication in neuroscience, neurotech, and neuroengineering.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack" aria-label="Substack">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          </a>
+          <a href="mailto:marvin@myscienceblueprint.com" class="footer-social" title="Email" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">Â© 2026 The Science Blueprint</span>
+      <span class="footer-doc-id">myscienceblueprint.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
