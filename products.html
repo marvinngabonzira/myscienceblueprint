@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint Commons — tools, frameworks, and resources for scientists building in resource-limited environments. Coming soon from The Science Blueprint.">
+  <title>Blueprint Commons · The Science Blueprint</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .products-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 1.5rem;
+    }
+
+    .products-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,212,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .products-content {
+      max-width: 680px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem 1rem;
+      border-radius: 100px;
+      font-family: var(--f-mono);
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: 1px solid var(--glass-border);
+      color: var(--text-3);
+      margin-bottom: 2rem;
+    }
+
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.8); }
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 3rem 0;
+      text-align: left;
+    }
+
+    .product-card {
+      padding: 1.5rem;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      background: var(--glass);
+    }
+
+    .product-card-tag {
+      font-family: var(--f-mono);
+      font-size: .6rem;
+      color: var(--text-3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+
+    .product-card-name {
+      font-family: var(--f-head);
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: .4rem;
+    }
+
+    .product-card-desc {
+      font-size: .78rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    .waitlist-box {
+      background: linear-gradient(135deg, var(--cyan-10), var(--magenta-10));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Minimal nav for subdomain -->
+<nav class="nav" id="main-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="https://myscienceblueprint.com" class="nav-brand">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Blueprint Commons</span>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="https://myscienceblueprint.com" class="btn btn-ghost" style="font-size:.72rem;">← Main site</a>
+      <button class="menu-toggle" id="menu-toggle" style="display:none;"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="products-hero">
+  <div class="products-content">
+
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      In development
+    </div>
+
+    <h1 style="font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:1rem;">
+      TSB <span class="accent-cyan">Products</span>
+    </h1>
+
+    <p style="font-size:.95rem;color:var(--text-2);line-height:1.9;margin-bottom:.5rem;max-width:520px;margin-left:auto;margin-right:auto;">
+      Resources built for people serious about understanding neurotech and brain-machine systems.
+    </p>
+
+    <p style="font-size:.875rem;color:var(--text-2);line-height:1.9;margin-bottom:.5rem;max-width:520px;margin-left:auto;margin-right:auto;">
+      These are tools, guides, and resources built from real study and real work in this field.
+      Nothing sold here is something we have not tested, applied, or personally validated.
+    </p>
+
+    <p style="font-size:.875rem;color:var(--text-2);line-height:1.9;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;">
+      If you are trying to navigate the field, understand the research, or build real knowledge
+      in neurotech and BCIs — this is where we can help beyond the free content.
+    </p>
+
+    <!-- What's coming -->
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card-tag">Framework</div>
+        <div class="product-card-name">GKS Navigator</div>
+        <div class="product-card-desc">
+          A structured guide to applying for the Global Korea Scholarship —
+          built from the process itself.
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-tag">Framework</div>
+        <div class="product-card-name">Fonora</div>
+        <div class="product-card-desc">
+          A systematic language acquisition framework optimised for
+          technical learners with limited immersion time.
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-tag">Tool · Coming</div>
+        <div class="product-card-name">Archive Template</div>
+        <div class="product-card-desc">
+          A reusable open-access publication workflow —
+          from draft to Zenodo with DOI, structured for solo researchers.
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-tag">More · In Planning</div>
+        <div class="product-card-name">Blueprint Commons</div>
+        <div class="product-card-desc">
+          Additional tools are in the pipeline. Join the waitlist to be
+          notified as they release.
+        </div>
+      </div>
+    </div>
+
+    <!-- Waitlist -->
+    <div class="waitlist-box">
+      <div class="section-label" style="justify-content:center;margin-bottom:.75rem;">Be first.</div>
+      <h3 style="margin-bottom:.65rem;">Browse Products — coming soon.</h3>
+      <p style="font-size:.875rem;color:var(--text-2);margin-bottom:1.5rem;max-width:420px;margin-left:auto;margin-right:auto;">
+        Join the waitlist. One email when it is ready. That is it.
+      </p>
+      <!--
+        ★ TALLY WAITLIST SETUP ★
+        1. Create a new Tally form: Name + Email fields only
+        2. Replace YOUR_WAITLIST_FORM_ID below
+      -->
+      <iframe
+        src="https://tally.so/embed/YOUR_WAITLIST_FORM_ID?hideTitle=1&transparentBackground=1"
+        width="100%" height="160" frameborder="0"
+        title="Join the waitlist" style="border:none;display:block;">
+      </iframe>
+      <p style="font-size:.65rem;color:var(--text-3);margin-top:1rem;">
+        Or follow updates on
+        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" style="color:var(--cyan)">Substack</a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Minimal footer -->
+<footer style="border-top:1px solid var(--glass-border);padding:1.5rem 0;text-align:center;">
+  <div class="container">
+    <span style="font-family:var(--f-mono);font-size:.65rem;color:var(--text-3);">
+      © 2026 The Science Blueprint ·
+      <a href="https://myscienceblueprint.com" style="color:var(--text-3);">myscienceblueprint.com</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Archive — published research by The Science Blueprint. Open-access work in neuroengineering, BCI, biomedical technology.">
+  <title>The Archive · The Science Blueprint</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .archive-filters { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .filter-btn {
+      padding:.35rem .9rem; border-radius:100px;
+      font-family:var(--f-mono); font-size:.65rem; font-weight:500;
+      letter-spacing:.08em; text-transform:uppercase;
+      background:var(--glass); border:1px solid var(--glass-border);
+      color:var(--text-2); cursor:pointer; transition:all var(--ease);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background:var(--cyan-10); border-color:var(--cyan-25); color:var(--cyan);
+    }
+    .archive-count { font-family:var(--f-mono); font-size:.72rem; color:var(--text-3); margin-bottom:.5rem; }
+    .archive-keywords { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.85rem; }
+    .keyword-chip {
+      padding:.15rem .5rem; border-radius:4px;
+      font-family:var(--f-mono); font-size:.6rem; color:var(--text-3);
+      background:var(--glass); border:1px solid var(--glass-border);
+    }
+    .archive-actions { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; margin-top:1.25rem; }
+    .platform-badge {
+      display:inline-flex; align-items:center; gap:.35rem;
+      font-family:var(--f-mono); font-size:.6rem; color:var(--text-3);
+      padding:.2rem .55rem; border-radius:4px;
+      border:1px solid var(--glass-border); background:var(--glass);
+    }
+    .cite-btn {
+      background:none; border:1px solid var(--glass-border);
+      font-family:var(--f-mono); font-size:.68rem; color:var(--text-2);
+      padding:.3rem .75rem; border-radius:6px; cursor:pointer;
+      transition:all var(--ease); letter-spacing:.04em;
+    }
+    .cite-btn:hover { border-color:var(--glass-border-h); color:var(--cyan); }
+    .pipeline-block {
+      background:linear-gradient(135deg,var(--cyan-10),var(--magenta-10));
+      border:1px solid var(--glass-border); border-radius:var(--radius-lg);
+      padding:2.5rem; text-align:center; margin-top:4rem;
+    }
+    .pipeline-block h3 { margin-bottom:.75rem; }
+    .pipeline-block p { font-size:.875rem; color:var(--text-2); max-width:480px; margin:0 auto 1.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="main-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="signal.html"  class="nav-link">The Signal</a></li>
+      <li><a href="archive.html" class="nav-link nav-link--active">Archive</a></li>
+      <li><a href="about.html"   class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero__tag">The Archive · Open Access. Always.</div>
+    <h1 class="page-hero__title">The Archive</h1>
+    <p class="page-hero__sub">
+      Technical reports, framework documents, and research papers — published with DOIs
+      and permanently free to read, share, and cite.
+      We publish here when there is genuine research to publish.
+    </p>
+  </div>
+</div>
+
+<!-- ═══ ARCHIVE ═══ -->
+<section class="section">
+  <div class="container">
+
+    <div class="fade-in">
+      <div class="archive-filters" role="group" aria-label="Filter publications">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Perspective Article">Perspective</button>
+        <button class="filter-btn" data-filter="Technical Report">Technical Report</button>
+        <button class="filter-btn" data-filter="bci">BCI / Neural</button>
+        <button class="filter-btn" data-filter="biomedical">Biomedical</button>
+      </div>
+      <div class="archive-count" id="archive-count">2 publications</div>
+    </div>
+
+    <!-- ─── ENTRY 01 ─── -->
+    <div class="archive-entry fade-in" data-type="Perspective Article" data-tags="bci neural privacy neurotech">
+      <div class="archive-idx">Entry 01 · TSB-TR-2026-002</div>
+      <div class="archive-title">
+        Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces
+      </div>
+      <div class="archive-meta">
+        <span class="archive-authors">Marvin Mmembe Ngabonzira</span>
+        <span class="badge badge-oa">Open Access</span>
+        <span class="badge badge-type">Perspective Article</span>
+        <span class="text-3" style="font-size:.72rem;">March 2026</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-top:.4rem;flex-wrap:wrap;">
+        <a class="doi-link" href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener">
+          ↳ doi:10.5281/zenodo.19058469
+        </a>
+        <span class="platform-badge">Zenodo</span>
+      </div>
+
+      <div class="abstract-row">
+        <button class="abstract-toggle" aria-expanded="false">
+          <span class="chevron">▾</span>
+          <span class="toggle-text">Read abstract</span>
+        </button>
+        <div class="abstract-body">
+          Brain-computer interfaces encode thought, intention, and biological identity into machine-readable
+          signals — creating a class of intimate data without precedent in existing privacy law. This
+          perspective examines the surveillance risk architecture of BCI systems, with particular focus on
+          Sub-Saharan African regulatory contexts where frameworks remain nascent and institutional oversight
+          is limited. We argue that the architecture of BCI data pipelines necessitates a proactive,
+          sovereignty-first approach to neural data governance, and propose foundational design principles
+          for responsible BCI deployment in low- and middle-income country contexts.
+        </div>
+      </div>
+
+      <div class="archive-keywords">
+        <span class="keyword-chip">Brain-Computer Interfaces</span>
+        <span class="keyword-chip">Neural Data Privacy</span>
+        <span class="keyword-chip">Surveillance</span>
+        <span class="keyword-chip">Neurotechnology</span>
+        <span class="keyword-chip">Data Governance</span>
+        <span class="keyword-chip">Sub-Saharan Africa</span>
+      </div>
+
+      <div class="archive-actions">
+        <a href="https://zenodo.org/record/19058469" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.72rem;">
+          Read full text ↗
+        </a>
+        <button class="cite-btn"
+          data-citation="Ngabonzira, M. M. (2026). Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces. The Science Blueprint. https://doi.org/10.5281/zenodo.19058469">
+          Cite (APA)
+        </button>
+        <button class="cite-btn"
+          data-citation="@techreport{ngabonzira2026neural,
+  author    = {Ngabonzira, Marvin Mmembe},
+  title     = {Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces},
+  year      = {2026},
+  institution = {The Science Blueprint},
+  doi       = {10.5281/zenodo.19058469},
+  url       = {https://doi.org/10.5281/zenodo.19058469}
+}">
+          Cite (BibTeX)
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── ENTRY 02 ─── -->
+    <div class="archive-entry fade-in" data-type="Technical Report" data-tags="biomedical engineering hardware sterilisation">
+      <div class="archive-idx">Entry 02 · TSB-TR-2025-001</div>
+      <div class="archive-title">
+        Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification
+      </div>
+      <div class="archive-meta">
+        <span class="archive-authors">Marvin Mmembe Ngabonzira · Nayiga Sylvia · Lukwiya Godfrey Toolit</span>
+        <span class="badge badge-oa">Open Access</span>
+        <span class="badge badge-type">Technical Report</span>
+        <span class="text-3" style="font-size:.72rem;">December 2025</span>
+      </div>
+      <div style="font-size:.72rem;color:var(--text-3);margin-bottom:.4rem;">
+        Supervised by Dr. Kafeero Hussein · Kyambogo University
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+        <a class="doi-link" href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener">
+          ↳ doi:10.5281/zenodo.19149610
+        </a>
+        <span class="platform-badge">Zenodo</span>
+      </div>
+
+      <div class="abstract-row">
+        <button class="abstract-toggle" aria-expanded="false">
+          <span class="chevron">▾</span>
+          <span class="toggle-text">Read abstract</span>
+        </button>
+        <div class="abstract-body">
+          This report documents the design, construction, and functional verification of an automated
+          first aid kit incorporating an internal ultraviolet-C sterilisation module. The system integrates
+          sensor-actuated dispensing mechanisms with a UV-C irradiation chamber to ensure medical supplies
+          remain sterile between uses — a critical consideration in resource-limited clinical and field
+          settings. Hardware implementation utilises low-cost microcontroller architectures, making the
+          system viable for deployment in Uganda and comparable Sub-Saharan African healthcare environments.
+          Functional verification confirmed effective UV-C dosage delivery and reliable dispensing
+          performance across all test scenarios.
+        </div>
+      </div>
+
+      <div class="archive-keywords">
+        <span class="keyword-chip">UV-C Sterilisation</span>
+        <span class="keyword-chip">Automated Dispensing</span>
+        <span class="keyword-chip">Biomedical Engineering</span>
+        <span class="keyword-chip">Healthcare</span>
+        <span class="keyword-chip">Microcontroller</span>
+        <span class="keyword-chip">Resource-limited Settings</span>
+      </div>
+
+      <div class="archive-actions">
+        <a href="https://zenodo.org/record/19149610" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.72rem;">
+          Read full text ↗
+        </a>
+        <button class="cite-btn"
+          data-citation="Ngabonzira, M. M., Nayiga, S., &amp; Toolit, L. G. (2025). Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification. The Science Blueprint. https://doi.org/10.5281/zenodo.19149610">
+          Cite (APA)
+        </button>
+        <button class="cite-btn"
+          data-citation="@techreport{ngabonzira2025firstaid,
+  author    = {Ngabonzira, Marvin Mmembe and Nayiga, Sylvia and Toolit, Lukwiya Godfrey},
+  title     = {Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification},
+  year      = {2025},
+  institution = {The Science Blueprint},
+  doi       = {10.5281/zenodo.19149610},
+  url       = {https://doi.org/10.5281/zenodo.19149610}
+}">
+          Cite (BibTeX)
+        </button>
+      </div>
+    </div>
+
+    <!-- Pipeline note -->
+    <div class="pipeline-block fade-in">
+      <div class="section-label" style="justify-content:center;margin-bottom:.75rem;">In Progress</div>
+      <h3>We publish when there is genuine research to publish.</h3>
+      <p>
+        Active work includes the A-MDRM BCI classifier and further research in neurotech
+        for low-resource contexts. Everything in the Archive is structured, honest, and built to last.
+        Quality over volume, every time.
+      </p>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta">
+        Get notified on Substack ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">Open-access science communication in neuroscience, neurotech, and neuroengineering.</p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube">YT</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack">SS</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 The Science Blueprint</span>
+      <span class="footer-doc-id">myscienceblueprint.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Filter logic
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      const entries = document.querySelectorAll('.archive-entry');
+      let n = 0;
+      entries.forEach(e => {
+        const match = f === 'all'
+          || (e.getAttribute('data-type') || '').toLowerCase().includes(f)
+          || (e.getAttribute('data-tags') || '').toLowerCase().includes(f);
+        e.style.display = match ? '' : 'none';
+        if (match) n++;
+      });
+      document.getElementById('archive-count').textContent = `${n} publication${n!==1?'s':''}`;
+    });
+  });
+</script>
+</body>
+</html>
