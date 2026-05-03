@@ -101,142 +101,34 @@
 </nav>
 
 <!-- ═══════════ PAGE HERO ═══════════ -->
+
+<!-- (Include standard head & nav as above) -->
+
 <div class="page-hero">
   <div class="container">
-    <div class="page-hero__tag">Contact · Get in Touch</div>
-    <h1 class="page-hero__title">Let's Talk.</h1>
+    <div class="page-hero__tag">Contact</div>
+    <h1 class="page-hero__title">Get in touch</h1>
     <p class="page-hero__sub">
-      Research collaboration, citation questions, media, outreach, or just a conversation
-      about neuroengineering — use the form or reach out directly.
+      Whether you are a curious student, a researcher, or someone who just finished a video and has a question, we want to hear from you.
     </p>
   </div>
 </div>
 
-<!-- ═══════════ CONTACT BODY ═══════════ -->
 <section class="section" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- Tally.so Form (left column) -->
-      <div class="fade-in">
-        <div class="section-label" style="margin-bottom:1.25rem;">Send a Message</div>
-        <div class="tally-wrap">
-          <!--
-            SETUP INSTRUCTION:
-            1. Log in to tally.so with marvin@myscienceblueprint.com
-            2. Create a new form — suggested fields: Name, Email, Subject (dropdown), Message
-            3. In Tally: Share → Embed → Copy the iframe src URL
-            4. Replace the src below with your Tally form URL
-            Example: https://tally.so/embed/YOUR_FORM_ID?hideTitle=1&transparentBackground=1&dynamicHeight=1
-          -->
-          <iframe
-            id="tally-iframe"
-            src="https://tally.so/embed/placeholder?hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy"
-            width="100%"
-            height="600"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Contact form"
-            style="display:block;border:none;background:transparent;">
-          </iframe>
-          <!-- Fallback message shown when iframe isn't configured yet -->
-          <noscript>
-            <div style="padding:2rem;text-align:center;color:var(--text-2);font-size:0.85rem;">
-              Contact form requires JavaScript. Please email
-              <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a> directly.
-            </div>
-          </noscript>
-        </div>
-
-        <!-- Tally SDK for dynamic height -->
-        <script async src="https://tally.so/widgets/embed.js"></script>
-      </div>
-
-      <!-- Direct contacts + info (right column) -->
-      <div class="fade-in">
-        <div class="section-label" style="margin-bottom:1.25rem;">Direct Contact</div>
-
-        <a href="mailto:marvin@myscienceblueprint.com" class="contact-direct-item">
-          <div class="cdi-icon">@</div>
-          <div class="cdi-content">
-            <div class="cdi-meta">Professional Email</div>
-            <div class="cdi-label">marvin@myscienceblueprint.com</div>
-          </div>
-          <div class="cdi-arrow">↗</div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/marvin-ngabonzira" target="_blank" rel="noopener" class="contact-direct-item">
-          <div class="cdi-icon">LI</div>
-          <div class="cdi-content">
-            <div class="cdi-meta">LinkedIn</div>
-            <div class="cdi-label">linkedin.com/in/marvin-ngabonzira</div>
-          </div>
-          <div class="cdi-arrow">↗</div>
-        </a>
-
-        <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="contact-direct-item">
-          <div class="cdi-icon">iD</div>
-          <div class="cdi-content">
-            <div class="cdi-meta">ORCID — for citation & research</div>
-            <div class="cdi-label">0009-0000-2708-2825</div>
-          </div>
-          <div class="cdi-arrow">↗</div>
-        </a>
-
-        <a href="https://zenodo.org/search?q=ngabonzira" target="_blank" rel="noopener" class="contact-direct-item">
-          <div class="cdi-icon">ZN</div>
-          <div class="cdi-content">
-            <div class="cdi-meta">Zenodo — for data & publications</div>
-            <div class="cdi-label">zenodo.org · search: ngabonzira</div>
-          </div>
-          <div class="cdi-arrow">↗</div>
-        </a>
-
-        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="contact-direct-item">
-          <div class="cdi-icon">SS</div>
-          <div class="cdi-content">
-            <div class="cdi-meta">Newsletter</div>
-            <div class="cdi-label">myscienceblueprint.substack.com</div>
-          </div>
-          <div class="cdi-arrow">↗</div>
-        </a>
-
-        <!-- What I respond to -->
-        <div class="glass-card" style="margin-top:2rem;padding:1.5rem;">
-          <h4 style="margin-bottom:1rem;font-size:0.875rem;">What I respond to</h4>
-          <ul style="display:flex;flex-direction:column;gap:0.6rem;">
-            <li style="font-size:0.8rem;color:var(--text-2);display:flex;gap:0.5rem;">
-              <span style="color:var(--cyan);flex-shrink:0;">→</span>
-              Research collaboration and co-authorship
-            </li>
-            <li style="font-size:0.8rem;color:var(--text-2);display:flex;gap:0.5rem;">
-              <span style="color:var(--cyan);flex-shrink:0;">→</span>
-              Invitations to speak or contribute
-            </li>
-            <li style="font-size:0.8rem;color:var(--text-2);display:flex;gap:0.5rem;">
-              <span style="color:var(--cyan);flex-shrink:0;">→</span>
-              Questions about published work or methods
-            </li>
-            <li style="font-size:0.8rem;color:var(--text-2);display:flex;gap:0.5rem;">
-              <span style="color:var(--cyan);flex-shrink:0;">→</span>
-              Student and outreach enquiries from Uganda / Africa
-            </li>
-            <li style="font-size:0.8rem;color:var(--text-2);display:flex;gap:0.5rem;">
-              <span style="color:var(--cyan);flex-shrink:0;">→</span>
-              Press and media (serious enquiries)
-            </li>
-          </ul>
-          <p style="font-size:0.72rem;color:var(--text-3);margin-top:1.25rem;line-height:1.7;">
-            I try to respond within 48–72 hours. For urgent matters, email is fastest.
-            Response time may be longer during active academic deadlines.
-          </p>
-        </div>
-      </div>
+  <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+    <div class="glass-card">
+      <h3 style="margin-bottom: 1rem;">Email Directly</h3>
+      <p class="text-2" style="margin-bottom: 2rem;">
+        Currently, the best way to reach out for research collaboration, media, or general enquiries is via email. We aim to respond within 48-72 hours.
+      </p>
+      <a href="mailto:marvin@myscienceblueprint.com" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2rem;">
+        marvin@myscienceblueprint.com ↗
+      </a>
     </div>
   </div>
 </section>
+
+<!-- (Include footer as above) -->
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer" role="contentinfo">
