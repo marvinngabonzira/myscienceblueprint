@@ -117,136 +117,76 @@
 </nav>
 
 <!-- ═══════════ PAGE HERO ═══════════ -->
+
+<!-- (Include standard head & nav as above) -->
+
 <div class="page-hero">
   <div class="container">
-    <div class="page-hero__tag">TSB Archive · v1.0</div>
-    <h1 class="page-hero__title">The Archive</h1>
+    <div class="page-hero__tag">The Archive</div>
+    <h1 class="page-hero__title">Open Access. Always.</h1>
     <p class="page-hero__sub">
-      All research, technical reports, and perspective pieces published under The Science Blueprint.
-      Every entry is open-access, permanently archived on Zenodo, and citable via DOI.
+      The Archive is TSB's academic layer. Technical reports, framework documents, and research papers. Everything in the Archive is structured, honest, and built to last.
     </p>
   </div>
 </div>
 
-<!-- ═══════════ ARCHIVE BODY ═══════════ -->
 <section class="section" id="archive">
   <div class="container">
-
-    <!-- Filters -->
-    <div class="fade-in">
-      <div class="archive-filters" role="group" aria-label="Filter publications">
-        <button class="filter-btn active" data-filter="all">All (2)</button>
-        <button class="filter-btn" data-filter="Perspective Article">Perspective</button>
-        <button class="filter-btn" data-filter="Technical Report">Technical Report</button>
-        <button class="filter-btn" data-filter="BCI">BCI / Neuro</button>
-        <button class="filter-btn" data-filter="Uganda">Uganda</button>
-      </div>
-      <div class="archive-count" id="archive-count">Showing 2 of 2 entries</div>
-    </div>
-
-    <!-- ───────── ENTRY 01 ───────── -->
-    <div class="archive-entry fade-in" data-type="Perspective Article" data-tags="BCI Uganda neuro privacy">
-      <div class="archive-idx">TSB-TR-2026-002 · Entry 01</div>
-      <div class="archive-title">
-        Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces
-      </div>
+    <!-- ENTRY 001 -->
+    <div class="archive-entry fade-in">
+      <div class="archive-idx">TSB-TR-2026-001</div>
+      <div class="archive-title">Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces</div>
       <div class="archive-meta">
         <span class="archive-authors">Marvin Mmembe Ngabonzira</span>
         <span class="badge badge-oa">Open Access</span>
-        <span class="badge badge-type">Perspective Article</span>
-        <span class="text-3" style="font-size:0.72rem;">March 2026</span>
+        <span class="badge badge-type">Perspective</span>
       </div>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener" aria-label="DOI link for publication 01">
-        <span>↳</span> doi:10.5281/zenodo.19058469
-      </a>
-      <div class="abstract-row">
-        <button class="abstract-toggle" aria-expanded="false">
-          <span class="chevron">▾</span>
-          <span class="toggle-text">Read abstract</span>
-        </button>
-        <div class="abstract-body">
-          Brain-computer interfaces encode thought, intention, and biological identity into machine-readable signals — creating a class of intimate data without precedent in existing privacy law. This perspective examines the surveillance risk architecture of BCI systems, with particular focus on Sub-Saharan African regulatory contexts where frameworks remain nascent and institutional oversight is limited. We argue that the architecture of BCI data pipelines necessitates a proactive, sovereignty-first approach to neural data governance, and propose foundational design principles for responsible BCI deployment in low- and middle-income country contexts.
-        </div>
-      </div>
-      <div class="archive-keywords">
-        <span class="keyword-chip">Brain-Computer Interfaces</span>
-        <span class="keyword-chip">Neural Data Privacy</span>
-        <span class="keyword-chip">Surveillance</span>
-        <span class="keyword-chip">Africa</span>
-        <span class="keyword-chip">Neurotechnology</span>
-        <span class="keyword-chip">Data Governance</span>
-      </div>
+      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19058469" target="_blank">↳ doi:10.5281/zenodo.19058469</a>
+      
       <div class="archive-actions">
-        <a href="https://zenodo.org/record/19058469" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.72rem;">
-          ↓ &nbsp;Read on Zenodo
-        </a>
-        <a href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.72rem;">
-          Cite (DOI)
-        </a>
+        <a href="https://zenodo.org/record/19058469" target="_blank" class="btn btn-primary" style="font-size:0.72rem;">Read Publication</a>
+        <button class="btn btn-ghost cite-btn" style="font-size:0.72rem;" data-citation="Ngabonzira, M. M. (2026). Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces. The Science Blueprint. https://doi.org/10.5281/zenodo.19058469">Cite</button>
       </div>
     </div>
 
-    <!-- ───────── ENTRY 02 ───────── -->
-    <div class="archive-entry fade-in" data-type="Technical Report" data-tags="Uganda biomedical engineering hardware">
-      <div class="archive-idx">TSB-TR-2025-001 · Entry 02</div>
-      <div class="archive-title">
-        Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification
-      </div>
+    <!-- ENTRY 002 -->
+    <div class="archive-entry fade-in">
+      <div class="archive-idx">TSB-TR-2026-002</div>
+      <div class="archive-title">Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification</div>
       <div class="archive-meta">
-        <span class="archive-authors">Marvin Mmembe Ngabonzira · Nayiga Sylvia · Lukwiya Godfrey Toolit</span>
+        <span class="archive-authors">Marvin Mmembe Ngabonzira, Nayiga Sylvia, Lukwiya Godfrey Toolit</span>
         <span class="badge badge-oa">Open Access</span>
         <span class="badge badge-type">Technical Report</span>
-        <span class="text-3" style="font-size:0.72rem;">December 2025</span>
       </div>
-      <div style="font-size:0.72rem;color:var(--text-3);margin-top:0.25rem;margin-bottom:0.25rem;">
-        Supervised by Dr. Kafeero Hussein · Kyambogo University, Kampala
-      </div>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener" aria-label="DOI link for publication 02">
-        <span>↳</span> doi:10.5281/zenodo.19149610
-      </a>
-      <div class="abstract-row">
-        <button class="abstract-toggle" aria-expanded="false">
-          <span class="chevron">▾</span>
-          <span class="toggle-text">Read abstract</span>
-        </button>
-        <div class="abstract-body">
-          This report documents the design, construction, and functional verification of an automated first aid kit incorporating an internal ultraviolet-C sterilisation module. The system integrates sensor-actuated dispensing mechanisms with a UV-C irradiation chamber to ensure medical supplies remain sterile between uses — a critical consideration in resource-limited clinical and field settings. Hardware implementation utilises low-cost microcontroller architectures, making the system viable for deployment in Uganda and comparable Sub-Saharan African healthcare environments. Functional verification confirmed effective UV-C dosage delivery and reliable dispensing performance across all test scenarios.
-        </div>
-      </div>
-      <div class="archive-keywords">
-        <span class="keyword-chip">UV-C Sterilisation</span>
-        <span class="keyword-chip">Automated First Aid</span>
-        <span class="keyword-chip">Biomedical Engineering</span>
-        <span class="keyword-chip">Uganda</span>
-        <span class="keyword-chip">Healthcare</span>
-        <span class="keyword-chip">Microcontroller</span>
-      </div>
+      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19149610" target="_blank">↳ doi:10.5281/zenodo.19149610</a>
+      
       <div class="archive-actions">
-        <a href="https://zenodo.org/record/19149610" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.72rem;">
-          ↓ &nbsp;Read on Zenodo
-        </a>
-        <a href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:0.72rem;">
-          Cite (DOI)
-        </a>
+        <a href="https://zenodo.org/record/19149610" target="_blank" class="btn btn-primary" style="font-size:0.72rem;">Read Publication</a>
+        <button class="btn btn-ghost cite-btn" style="font-size:0.72rem;" data-citation="Ngabonzira, M. M., Nayiga, S., & Lukwiya, G. T. (2025). Automated First Aid Kit with Internal UV-C Sterilisation. The Science Blueprint. https://doi.org/10.5281/zenodo.19149610">Cite</button>
       </div>
     </div>
-
-    <!-- Call to note: in progress work -->
-    <div class="call-to-submit fade-in">
-      <div class="section-label" style="justify-content:center;margin-bottom:0.75rem;">In the Pipeline</div>
-      <h3>More work is on the way.</h3>
-      <p>
-        Active research includes the A-MDRM BCI classifier under noisy conditions and further perspectives
-        on neuroengineering in Sub-Saharan Africa. Subscribe to The Blueprint to be notified when new
-        work is published.
-      </p>
-      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta">
-        Get notified on Substack ↗
-      </a>
-    </div>
-
   </div>
 </section>
+
+<!-- Add this script right before </body> to make the Cite buttons work -->
+<script>
+  document.querySelectorAll('.cite-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const citation = btn.getAttribute('data-citation');
+      navigator.clipboard.writeText(citation).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Copied';
+        btn.style.color = 'var(--cyan)';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.color = '';
+        }, 2000);
+      });
+    });
+  });
+</script>
+<!-- (Include footer as above) -->
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer" role="contentinfo">
