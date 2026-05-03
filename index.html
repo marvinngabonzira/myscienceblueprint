@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Science Blueprint — making neuroscience, neurotech, and neuroengineering legible for people who think seriously about how brains and machines work.">
+  <meta name="author" content="Marvin Mmembe Ngabonzira">
+  <meta property="og:title" content="The Science Blueprint — Reverse Engineering Intelligence">
+  <meta property="og:description" content="Neuroscience. Neurotech. Neuroengineering. Explained without dumbing it down.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="https://myscienceblueprint.com">
+  <meta name="twitter:card" content="summary">
+  <title>The Science Blueprint — Reverse Engineering Intelligence</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="The Science Blueprint home">
+      <img src="assets/logo.png" alt="TSB Logo" class="nav-logo" width="34" height="34">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">The Science Blueprint</span>
+        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="signal.html"  class="nav-link">The Signal</a></li>
+      <li><a href="archive.html" class="nav-link">Archive</a></li>
+      <li><a href="about.html"   class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Neurotech &nbsp;·&nbsp; BCIs &nbsp;·&nbsp; Neuroscience</div>
+    <h1 class="hero-headline">
+      The brain is the most<br>
+      <span class="accent-cyan">complicated thing</span><br>
+      in the known universe.
+    </h1>
+    <p class="hero-subline">
+      We are going to figure it out together.
+    </p>
+    <div class="hero-cta">
+      <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="btn btn-primary">Watch on YouTube</a>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-outline">Subscribe on Substack</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-strip section--xs">
+  <div class="stats-strip-inner container">
+    <div class="stat-item fade-in">
+      <span class="stat-value" data-stat="youtube_subscribers">6</span>
+      <span class="stat-label">YouTube Subscribers</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-value" data-stat="zenodo_publications">2</span>
+      <span class="stat-label">Publications</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-value" data-stat="substack_readers">0</span>
+      <span class="stat-label">Substack Readers</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-value accent-magenta">100%</span>
+      <span class="stat-label">Free to Read</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MANIFESTO ═══ -->
+<section class="section manifesto">
+  <div class="container">
+    <div class="manifesto-inner fade-in">
+      <div class="section-label">What We Do</div>
+      <h2 class="manifesto-quote">
+        We take the ideas that confuse people,<br>
+        <span class="accent-cyan">and reverse engineer them.</span>
+      </h2>
+      <div class="manifesto-rule"></div>
+      <p class="manifesto-body">
+        We pull them apart, layer by layer, until the logic is visible.
+        No PhD required. Just genuine curiosity.
+      </p>
+      <p class="manifesto-body">
+        From why your brain runs on roughly 20 watts to why uploading consciousness
+        is harder than it sounds — we go where the science is actually interesting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LATEST SIGNAL ═══ -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">The Signal</div>
+      <h2>Where the main work lives.</h2>
+      <p class="text-2" style="font-size:.875rem;margin-top:.5rem;">
+        Weekly science communication about neurotech, BCIs, and the science of brain-machine systems.
+      </p>
+    </div>
+
+    <div class="signal-grid">
+      <!-- YouTube — uploads playlist auto-loads latest video -->
+      <div class="fade-in">
+        <div class="signal-sub-label">YouTube · Latest Episode</div>
+        <div class="video-container" style="margin-bottom:1rem;">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=UUsjQgoEj_ZtM2W5QnfMghWA"
+            title="Latest episode from The Science Blueprint"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.72rem;">
+          See all episodes on YouTube ↗
+        </a>
+      </div>
+
+      <!-- Substack latest post -->
+      <div class="glass-card fade-in" id="latest-post" style="min-height:200px;">
+        <div style="color:var(--text-3);font-size:.78rem;">Loading…</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;" class="fade-in">
+      <a href="signal.html" class="btn btn-outline">See everything in The Signal →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARCHIVE PREVIEW ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">The Archive</div>
+      <h2>Published Research</h2>
+      <p class="text-2" style="font-size:.875rem;margin-top:.5rem;">
+        Original research, technical reports, and perspective pieces. All free to read and cite.
+      </p>
+    </div>
+
+    <div class="archive-entry fade-in">
+      <div class="archive-idx">Entry 01 · TSB-TR-2026-002</div>
+      <div class="archive-title">Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces</div>
+      <div class="archive-meta">
+        <span class="archive-authors">Marvin Mmembe Ngabonzira</span>
+        <span class="badge badge-oa">Open Access</span>
+        <span class="badge badge-type">Perspective Article</span>
+        <span class="text-3" style="font-size:.72rem;">Mar 2026</span>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener">
+        <span>↳</span> doi:10.5281/zenodo.19058469
+      </a>
+    </div>
+
+    <div class="archive-entry fade-in">
+      <div class="archive-idx">Entry 02 · TSB-TR-2025-001</div>
+      <div class="archive-title">Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification</div>
+      <div class="archive-meta">
+        <span class="archive-authors">Marvin Mmembe Ngabonzira · Nayiga Sylvia · Lukwiya Godfrey Toolit</span>
+        <span class="badge badge-oa">Open Access</span>
+        <span class="badge badge-type">Technical Report</span>
+        <span class="text-3" style="font-size:.72rem;">Dec 2025</span>
+      </div>
+      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener">
+        <span>↳</span> doi:10.5281/zenodo.19149610
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+      <a href="archive.html" class="btn btn-primary">Full Archive →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER CTA ═══ -->
+<section class="section--sm" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="newsletter-wrap fade-in">
+      <div class="section-label" style="justify-content:center;">The Blueprint on Substack</div>
+      <h2 style="margin-bottom:.75rem;">The full picture is on Substack.</h2>
+      <p class="text-2" style="font-size:.9rem;max-width:480px;margin:0 auto 2rem;">
+        Every video script, fully cited and expanded, lives there.
+        If you want the sources and the depth — that is where you go. Free.
+      </p>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta">
+        Subscribe on Substack ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">The Science Blueprint</div>
+        <div class="footer-tagline">Reverse Engineering Intelligence</div>
+        <p class="footer-desc">
+          Open-access science communication at the intersection of neuroscience,
+          neurotech, and neuroengineering.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube">YT</a>
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack">SS</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="signal.html">The Signal</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <nav class="footer-nav">
+          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 The Science Blueprint</span>
+      <span class="footer-doc-id">myscienceblueprint.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/particles.js"></script>
+</body>
+</html>
