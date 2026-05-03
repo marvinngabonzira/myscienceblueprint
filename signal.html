@@ -116,66 +116,41 @@
 <!-- ═══════════ PAGE HERO ═══════════ -->
 <div class="page-hero">
   <div class="container">
-    <div class="page-hero__tag">The Signal · Video + Writing</div>
-    <h1 class="page-hero__title">Every Breakdown.<br>Every Dispatch.</h1>
+    <div class="page-hero__tag">The Signal</div>
+    <h1 class="page-hero__title">Where the main work lives.</h1>
     <p class="page-hero__sub">
-      Research explanations on YouTube, and longer-form research notes on Substack.
-      This is where the science gets communicated.
+      Weekly science communication about neurotech, BCIs, and the science of brain-machine systems.
     </p>
   </div>
 </div>
 
+  
 <!-- ═══════════ SIGNAL BODY ═══════════ -->
-<section class="section" id="signal">
-  <div class="container">
+<!-- (Include standard head & nav as above) -->
 
-    <!-- Platform Tabs -->
-    <div class="platform-tab-wrap fade-in" role="tablist">
-      <button class="platform-tab active" data-tab="video" role="tab" aria-selected="true">YouTube</button>
-      <button class="platform-tab" data-tab="substack" role="tab" aria-selected="false">Substack</button>
+<section class="section">
+  <div class="container grid-2">
+    <!-- YouTube -->
+    <div class="glass-card">
+      <h3 style="color: var(--cyan); margin-bottom: 1rem;">YouTube</h3>
+      <p class="text-2">
+        YouTube is for the big ideas. Long-form, research-backed videos that actually explain what is happening in neurotech, and why it matters. No sensationalism. No clickbait energy. Just rigorous ideas, made accessible.
+      </p>
+      <a href="https://youtube.com/@myscienceblueprint" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Watch on YouTube ↗</a>
     </div>
 
-    <!-- ── VIDEO TAB ── -->
-    <div class="platform-panel active" id="panel-video" role="tabpanel">
-      <div class="channel-banner fade-in">
-        <img src="assets/logo.png" alt="TSB YouTube Channel" class="channel-banner-logo">
-        <div class="channel-banner-info">
-          <div class="channel-banner-name">The Science Blueprint</div>
-          <div class="channel-banner-sub">6 subscribers · Breaking down neuroengineering and biomedical science from Uganda</div>
-        </div>
-        <a href="https://www.youtube.com/@thescienceblueprint" target="_blank" rel="noopener" class="btn btn-magenta" style="flex-shrink:0;">
-          Subscribe on YouTube ↗
-        </a>
-      </div>
-
-      <div class="video-grid" id="video-grid">
-        <!-- Loaded by main.js -->
-        <div style="grid-column:1/-1;text-align:center;color:var(--text-3);font-size:0.8rem;padding:3rem 0;">
-          Loading videos…
-        </div>
-      </div>
+    <!-- Substack -->
+    <div class="glass-card">
+      <h3 style="color: var(--magenta); margin-bottom: 1rem;">Substack</h3>
+      <p class="text-2">
+        Substack is the deeper layer. Every video script, fully cited and expanded, lives there. If you want the full picture, including the sources, that is where you go.
+      </p>
+      <a href="https://myscienceblueprint.substack.com" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Read on Substack ↗</a>
     </div>
-
-    <!-- ── SUBSTACK TAB ── -->
-    <div class="platform-panel" id="panel-substack" role="tabpanel">
-      <div class="channel-banner fade-in">
-        <img src="assets/logo.png" alt="TSB Substack" class="channel-banner-logo">
-        <div class="channel-banner-info">
-          <div class="channel-banner-name">The Blueprint</div>
-          <div class="channel-banner-sub">Research notes, ideas, and breakdowns — free on Substack</div>
-        </div>
-        <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta" style="flex-shrink:0;">
-          Subscribe on Substack ↗
-        </a>
-      </div>
-
-      <div id="substack-list">
-        <div class="loading">Loading posts…</div>
-      </div>
-    </div>
-
   </div>
 </section>
+
+<!-- (Include footer as above) -->
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer" role="contentinfo">
