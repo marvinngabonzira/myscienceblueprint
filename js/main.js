@@ -1,27 +1,14 @@
 /* ============================================================
-   THE SCIENCE BLUEPRINT — main.js v2.0
+   THE SCIENCE BLUEPRINT - main.js v2.1
    myscienceblueprint.com
+   Dark mode only. No theme toggle.
    ============================================================ */
 'use strict';
 
-(function initTheme() {
-  const stored = localStorage.getItem('tsb-theme');
-  const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', stored || preferred);
-})();
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('tsb-theme', next);
-  document.querySelectorAll('.theme-toggle').forEach(b => { b.textContent = next === 'dark' ? '☀' : '◑'; });
-}
+// Force dark mode always
+document.documentElement.setAttribute('data-theme', 'dark');
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  const theme = document.documentElement.getAttribute('data-theme');
-  document.querySelectorAll('.theme-toggle').forEach(b => { b.textContent = theme === 'dark' ? '☀' : '◑'; });
 
   // Nav scroll
   const nav = document.getElementById('main-nav');
@@ -80,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!text) return;
       const copy = () => {
         const orig = btn.innerHTML;
-        btn.innerHTML = '<span style="color:var(--cyan)">✓ Copied</span>';
+        btn.innerHTML = '<span style="color:var(--cyan)">Copied</span>';
         setTimeout(() => { btn.innerHTML = orig; }, 2200);
       };
       if (navigator.clipboard) {
@@ -109,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ── BACK TO TOP ───────────────────────────────────────────
+// -- BACK TO TOP --
 function initBackToTop() {
   const btn = document.createElement('button');
   btn.className = 'back-to-top';
@@ -122,21 +109,21 @@ function initBackToTop() {
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-// ── SUBSTACK (single latest post for homepage) ─────────────────
+// -- SUBSTACK (single latest post for homepage) --
 function fetchSubstackLatest(container) {
   const feed = 'https://myscienceblueprint.substack.com/feed';
   const url  = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}&count=1`;
-  container.innerHTML = '<div class="signal-post-date" style="color:var(--text-3)">Loading…</div>';
+  container.innerHTML = '<div class="signal-post-date" style="color:var(--text-3)">Loading...</div>';
   fetch(url).then(r => r.json()).then(d => {
     if (d.status === 'ok' && d.items?.length) {
       const item = d.items[0];
       const date = new Date(item.pubDate).toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
-      const teaser = (item.description || '').replace(/<[^>]*>/g,'').slice(0, 200).trim() + '…';
+      const teaser = (item.description || '').replace(/<[^>]*>/g,'').slice(0, 200).trim() + '...';
       container.innerHTML = `
         <div class="signal-post-date">${date}</div>
         <div class="signal-post-title">${item.title}</div>
         <p class="signal-post-teaser">${teaser}</p>
-        <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.78rem">Read on Substack ↗</a>`;
+        <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.78rem">Read on Substack -></a>`;
     } else {
       container.innerHTML = substackWidget();
     }
@@ -145,17 +132,17 @@ function fetchSubstackLatest(container) {
 
 function substackWidget() {
   return `
-    <div class="signal-sub-label" style="margin-bottom:.75rem">Substack · The Blueprint</div>
+    <div class="signal-sub-label" style="margin-bottom:.75rem">Substack | The Blueprint</div>
     <div class="signal-post-title" style="margin-bottom:.75rem">Research notes. No algorithm. Just signal.</div>
     <p class="signal-post-teaser">
-      Long-form breakdowns of neuro research — the kind that takes ideas seriously
+      Long-form breakdowns of neuro research - the kind that takes ideas seriously
       and treats you like you can handle the complexity.
     </p>
     <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener"
-       class="btn btn-outline" style="font-size:.78rem">Subscribe on Substack ↗</a>`;
+       class="btn btn-outline" style="font-size:.78rem">Subscribe on Substack -></a>`;
 }
 
-// ── SUBSTACK LIST (signal page) ─────────────────────────────
+// -- SUBSTACK LIST (signal page) --
 function loadSubstackList() {
   const list = document.getElementById('substack-list');
   const feed = 'https://myscienceblueprint.substack.com/feed';
@@ -164,12 +151,12 @@ function loadSubstackList() {
     if (d.status === 'ok' && d.items?.length) {
       list.innerHTML = d.items.map(item => {
         const date = new Date(item.pubDate).toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
-        const teaser = (item.description||'').replace(/<[^>]*>/g,'').slice(0,240).trim()+'…';
+        const teaser = (item.description||'').replace(/<[^>]*>/g,'').slice(0,240).trim()+'...';
         return `<div class="substack-post-card">
           <div class="sp-date">${date}</div>
           <div class="sp-title">${item.title}</div>
           <p class="sp-teaser">${teaser}</p>
-          <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.72rem">Read on Substack ↗</a>
+          <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.72rem">Read on Substack -></a>
         </div>`;
       }).join('');
     } else { list.innerHTML = substackListPlaceholder(); }
@@ -178,17 +165,17 @@ function loadSubstackList() {
 
 function substackListPlaceholder() {
   return `<div class="substack-post-card">
-    <div class="sp-title" style="margin-bottom:.65rem">No posts yet — but the first one is close.</div>
+    <div class="sp-title" style="margin-bottom:.65rem">No posts yet - but the first one is close.</div>
     <p class="sp-teaser">
       Subscribe now so you don't miss the first dispatch. When it drops, it goes to
-      subscribers first — no feed, no algorithm.
+      subscribers first - no feed, no algorithm.
     </p>
     <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener"
-       class="btn btn-outline" style="font-size:.72rem">Subscribe ↗</a>
+       class="btn btn-outline" style="font-size:.72rem">Subscribe -></a>
   </div>`;
 }
 
-// ── VIDEO GRID ──────────────────────────────────────────────
+// -- VIDEO GRID --
 async function loadVideos(container) {
   try {
     const data = await fetch('./data/videos.json').then(r => r.json());

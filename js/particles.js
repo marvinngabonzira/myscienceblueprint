@@ -1,5 +1,5 @@
 /* ============================================================
-   TSB PARTICLE NETWORK — Neural Node Canvas Animation
+   TSB PARTICLE NETWORK - Neural Node Canvas Animation
    ============================================================ */
 
 class ParticleNetwork {
