@@ -1,295 +1,401 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Science Blueprint - making neuroscience, neurotech, and brain-computer interfaces legible for people who think seriously about how brains and machines work.">
-  <meta name="author" content="Marvin Mmembe Ngabonzira">
-  <meta property="og:title" content="The Science Blueprint - Reverse Engineering Intelligence">
-  <meta property="og:description" content="Neuroscience. Neurotech. Brain-Computer Interfaces. Explained without dumbing it down.">
-  <meta property="og:image" content="assets/logo.png">
-  <meta property="og:url" content="https://myscienceblueprint.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>The Science Blueprint - Reverse Engineering Intelligence</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/favicon.ico">
-  <link rel="apple-touch-icon" href="assets/logo.png">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Marvin Ngabonzira | Engineer & Researcher</title>
+  <meta name="description" content="Personal website of Marvin Ngabonzira — Mechatronics & Biomedical Engineering student, neural engineering researcher, and science communicator based in Kampala, Uganda.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Clean, readable fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM - CLEAN EDITORIAL (LIGHT + REFINED DARK)
+       ============================================================ */
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #171717;
+      --text-muted: #666666;
+      --border: #e5e5e5;
+      --border-hover: #b3b3b3;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --tag-bg: #f3f4f6;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111215;
+      --surface: #18191e;
+      --text: #ededed;
+      --text-muted: #8c9099;
+      --border: #262830;
+      --border-hover: #3e414e;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --tag-bg: #1c1e24;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .wrapper {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* Header & Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2.5rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .theme-toggle:hover {
+      color: var(--text);
+      border-color: var(--border-hover);
+    }
+
+    /* Profile / Intro */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .profile-info h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .profile-location {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Links Bar */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    /* Content Typography */
+    h2 {
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1.15rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    /* Item Blocks (Work, Papers, Experience) */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .item-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .item-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+    }
+
+    .item-link {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-top: 0.35rem;
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 2rem 1.2rem 4rem;
+      }
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .avatar {
+        width: 88px;
+        height: 88px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand" aria-label="The Science Blueprint home">
-      <img src="assets/logo.png" alt="TSB" class="nav-logo" width="34" height="34">
-      <div class="nav-brand-text">
-        <span class="nav-brand-name">The Science Blueprint</span>
-        <span class="nav-brand-tag">Reverse Engineering Intelligence</span>
-      </div>
-    </a>
-    <ul class="nav-links" id="nav-links" role="list">
-      <li><a href="index.html"    class="nav-link nav-link--active">Home</a></li>
-      <li><a href="signal.html"   class="nav-link">The Signal</a></li>
-      <li><a href="archive.html"  class="nav-link">Archive</a></li>
-      <li><a href="products.html" class="nav-link">Products</a></li>
-      <li><a href="about.html"    class="nav-link">About</a></li>
-      <li><a href="contact.html"  class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+  <div class="wrapper">
+    <!-- Top Theme Toggle -->
+    <div class="top-bar">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
+        theme
       </button>
     </div>
-  </div>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="hero">
-  <canvas id="particles-canvas" aria-hidden="true"></canvas>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Neurotech &nbsp;|&nbsp; Neuroscience &nbsp;|&nbsp; Brain-Computer Interfaces</div>
-    <h1 class="hero-headline">
-      The brain is the most<br>
-      <span class="accent-cyan">complicated thing</span><br>
-      in the known universe.
-    </h1>
-    <p class="hero-subline">
-      We are going to figure it out together.
-    </p>
-    <div class="hero-cta">
-      <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="btn btn-primary">Watch on YouTube</a>
-      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-outline">Subscribe on Substack</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PLATFORM CARDS ===== -->
-<section class="section--sm" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="platform-cards">
-
-      <!-- The Signal -->
-      <div class="platform-card fade-in">
-        <div class="platform-card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <div class="platform-card-name">The Signal</div>
-        <div class="platform-card-desc">Weekly science communication about neurotech, BCIs, and brain-machine systems. YouTube for the big ideas. Substack for the full cited depth.</div>
-        <a href="signal.html" class="platform-card-link">Explore The Signal -></a>
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <img src="assets/profile.webp" alt="Marvin Ngabonzira" class="avatar" width="104" height="104">
+      <div class="profile-info">
+        <h1>Marvin Ngabonzira</h1>
+        <p class="profile-tagline">Mechatronics & Biomedical Engineering | Neural Engineering | Science Communication</p>
+        <div class="profile-location">Kampala, Uganda</div>
       </div>
+    </header>
 
-      <!-- The Archive -->
-      <div class="platform-card fade-in">
-        <div class="platform-card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-        </div>
-        <div class="platform-card-name">The Archive</div>
-        <div class="platform-card-desc">Original research, technical reports, and perspective pieces - published with DOIs and permanently free to read, share, and cite.</div>
-        <a href="archive.html" class="platform-card-link">Browse The Archive -></a>
-      </div>
+    <!-- Clean Direct Links -->
+    <nav class="nav-links" aria-label="Social and academic links">
+      <a href="https://www.youtube.com/@marvinngabonzira" target="_blank" rel="noopener" class="nav-link">YouTube ↗</a>
+      <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="nav-link">ORCID ↗</a>
+      <a href="mailto:marvin@myscienceblueprint.com" class="nav-link">Email ↗</a>
+    </nav>
 
-      <!-- Products -->
-      <div class="platform-card fade-in">
-        <div class="platform-card-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div class="platform-card-name">Products</div>
-        <div class="platform-card-desc">Tools, frameworks, and resources built from real study and real work in this field. Nothing here is untested or unvalidated.</div>
-        <a href="products.html" class="platform-card-link">View Products -></a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== MANIFESTO ===== -->
-<section class="section manifesto">
-  <div class="container">
-    <div class="manifesto-inner fade-in">
-      <div class="section-label">What We Do</div>
-      <h2 class="manifesto-quote">
-        We take the ideas that confuse people,<br>
-        <span class="accent-cyan">and reverse engineer them.</span>
-      </h2>
-      <div class="manifesto-rule"></div>
-      <p class="manifesto-body">
-        We pull them apart, layer by layer, until the logic is visible.
-        No PhD required. Just genuine curiosity.
+    <!-- Bio -->
+    <section aria-labelledby="sec-about">
+      <h2 id="sec-about">About</h2>
+      <p>
+        I am an engineering student at Kyambogo University pursuing a Bachelor of Engineering in Mechatronics and Biomedical Engineering, an independent researcher, and a science communicator.
       </p>
-      <p class="manifesto-body">
-        From why your brain runs on roughly 20 watts to why uploading consciousness
-        is harder than it sounds - we go where the science is actually interesting.
+      <p>
+        My focus is <strong>neural engineering</strong>. My long-term goal is to design and build engineering systems that enable people with neurological conditions to live more functional, independent lives.
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== LATEST SIGNAL ===== -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header fade-in">
-      <div class="section-label">The Signal</div>
-      <h2>Where the main work lives.</h2>
-      <p class="text-2" style="font-size:.875rem;margin-top:.5rem;">
-        Weekly science communication about neurotech, BCIs, and the science of brain-machine systems.
+      <p>
+        Alongside engineering, I produce long-form technical breakdowns on YouTube, translating complex neurotechnology and biomedical engineering concepts into accessible, research-backed videos.
       </p>
-    </div>
+    </section>
 
-    <div class="signal-grid">
-      <!-- YouTube - playlist -->
-      <div class="fade-in">
-        <div class="signal-sub-label">YouTube | Latest Episode</div>
-        <div class="video-container" style="margin-bottom:1rem;">
-          <iframe
-            src="https://www.youtube.com/embed/videoseries?list=PL9hPE21ciYqQqETFt-keNmAH5NORXPWze"
-            title="The Science Blueprint - YouTube Channel"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy">
-          </iframe>
+    <!-- Current Work -->
+    <section aria-labelledby="sec-current">
+      <h2 id="sec-current">Current Work</h2>
+      <div class="item-list">
+        <div class="item">
+          <div class="item-title">EEG-based Classification for Neurological Screening</div>
+          <div class="item-desc">
+            Researching EEG signal classification methods that could contribute to the development of future approaches for Parkinson’s disease screening.
+          </div>
         </div>
-        <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.72rem;">
-          See all episodes on YouTube ->
-        </a>
-      </div>
-
-      <!-- Substack subscribe embed -->
-      <div class="fade-in">
-        <div class="signal-sub-label" style="margin-bottom:.75rem;">Substack | The Blueprint</div>
-        <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--glass-border);">
-          <iframe
-            src="https://myscienceblueprint.substack.com/embed"
-            width="100%" height="320"
-            style="border:none;display:block;"
-            frameborder="0" scrolling="no"
-            title="Subscribe to The Blueprint on Substack">
-          </iframe>
+        <div class="item">
+          <div class="item-title">Technical Science & Technology Breakdowns</div>
+          <div class="item-desc">
+            Researching, scripting, and producing long-form video essays covering neural systems, brain-computer interfaces, and biomedical hardware at <a href="https://www.youtube.com/@marvinngabonzira" target="_blank" rel="noopener">@marvinngabonzira</a>.
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div style="text-align:center;margin-top:3rem;" class="fade-in">
-      <a href="signal.html" class="btn btn-outline">See everything in The Signal -></a>
-    </div>
-  </div>
-</section>
+    <!-- Research & Publications -->
+    <section aria-labelledby="sec-research">
+      <h2 id="sec-research">Publications & Preprints</h2>
+      <div class="item-list">
 
-<!-- ===== ARCHIVE PREVIEW ===== -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-in">
-      <div class="section-label">The Archive</div>
-      <h2>Published Research</h2>
-      <p class="text-2" style="font-size:.875rem;margin-top:.5rem;">
-        Original research, technical reports, and perspective pieces. All free to read and cite.
-      </p>
-    </div>
-
-    <!-- Entry 01 - oldest (chronological) -->
-    <div class="archive-entry fade-in">
-      <div class="archive-idx">Entry 01 | TSB-TR-2025-001</div>
-      <div class="archive-title">Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification</div>
-      <div class="archive-meta">
-        <span class="archive-authors">Marvin Mmembe Ngabonzira | Nayiga Sylvia | Lukwiya Godfrey Toolit</span>
-        <span class="badge badge-oa">Open Access</span>
-        <span class="badge badge-type">Technical Report</span>
-        <span class="text-3" style="font-size:.72rem;">Dec 2025</span>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener">
-        <span>-></span> doi:10.5281/zenodo.19149610
-      </a>
-    </div>
-
-    <!-- Entry 02 - most recent -->
-    <div class="archive-entry fade-in">
-      <div class="archive-idx">Entry 02 | TSB-TR-2026-002</div>
-      <div class="archive-title">Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces</div>
-      <div class="archive-meta">
-        <span class="archive-authors">Marvin Mmembe Ngabonzira</span>
-        <span class="badge badge-oa">Open Access</span>
-        <span class="badge badge-type">Perspective Article</span>
-        <span class="text-3" style="font-size:.72rem;">Mar 2026</span>
-      </div>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener">
-        <span>-></span> doi:10.5281/zenodo.19058469
-      </a>
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
-      <a href="archive.html" class="btn btn-primary">Full Archive -></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== NEWSLETTER CTA ===== -->
-<section class="section--sm" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="newsletter-wrap fade-in">
-      <div class="section-label" style="justify-content:center;">The Blueprint on Substack</div>
-      <h2 style="margin-bottom:.75rem;">The full picture is on Substack.</h2>
-      <p class="text-2" style="font-size:.9rem;max-width:480px;margin:0 auto 2rem;">
-        Every video script, fully cited and expanded, lives there.
-        If you want the sources and the depth - that is where you go. Free.
-      </p>
-      <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="btn btn-magenta">
-        Subscribe on Substack ->
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">The Science Blueprint</div>
-        <div class="footer-tagline">Reverse Engineering Intelligence</div>
-        <p class="footer-desc">
-          Open-access science communication at the intersection of neuroscience,
-          neurotech, and brain-computer interfaces.
-        </p>
-        <div class="footer-socials">
-          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener" class="footer-social" title="YouTube" aria-label="YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <article class="item">
+          <div class="item-title">Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces</div>
+          <div class="item-meta">Perspective Article (2026) · Zenodo</div>
+          <div class="item-desc">
+            An analysis of BCI surveillance architecture, arguing for proactive neural data governance and sovereignty principles, especially within nascent Sub-Saharan African regulatory frameworks.
+          </div>
+          <a href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener" class="item-link">
+            doi:10.5281/zenodo.19058469 ↗
           </a>
-          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener" class="footer-social" title="Substack" aria-label="Substack">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </article>
+
+        <article class="item">
+          <div class="item-title">Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification</div>
+          <div class="item-meta">Technical Report (2025) · With Sylvia Nayiga & Godfrey Toolit Lukwiya · Supervised by Dr. Hussein Kafeero</div>
+          <div class="item-desc">
+            Designed, constructed, and verified an automated medical dispensing unit incorporating an internal UV-C irradiation chamber to maintain sterile supplies in resource-constrained clinical settings.
+          </div>
+          <a href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener" class="item-link">
+            doi:10.5281/zenodo.19149610 ↗
           </a>
-          <a href="mailto:marvin@myscienceblueprint.com" class="footer-social" title="Email" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Background & Experience -->
+    <section aria-labelledby="sec-background">
+      <h2 id="sec-background">Background</h2>
+      <div class="item-list">
+        <div class="item">
+          <div class="item-title">Kyambogo University</div>
+          <div class="item-meta">2023 – Present · Kampala, Uganda</div>
+          <div class="item-desc">
+            Bachelor of Engineering in Mechatronics and Biomedical Engineering.
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-title">St. Francis Hospital Nsambya</div>
+          <div class="item-meta">2025 · Clinical Attachment</div>
+          <div class="item-desc">
+            Observed clinical deployment, routine servicing, and practical challenges of biomedical and assistive technology in hospital practice.
+          </div>
         </div>
       </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="signal.html">The Signal</a>
-          <a href="archive.html">Archive</a>
-          <a href="products.html">Products</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-      <div>
-        <div class="footer-col-title">Connect</div>
-        <nav class="footer-nav">
-          <a href="https://www.youtube.com/@myscienceblueprint" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://myscienceblueprint.substack.com" target="_blank" rel="noopener">Substack</a>
-          <a href="mailto:marvin@myscienceblueprint.com">marvin@myscienceblueprint.com</a>
-        </nav>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copyright">(c) 2026 The Science Blueprint</span>
-      <span class="footer-doc-id">myscienceblueprint.com</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script src="js/main.js"></script>
-<script src="js/particles.js"></script>
+    <!-- Footer -->
+    <footer>
+      <span>Marvin Ngabonzira</span>
+      <span>Kampala, Uganda</span>
+    </footer>
+  </div>
+
+  <!-- Minimal Dark/Light Mode Switcher -->
+  <script>
+    (function() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+
+      // Determine initial theme: saved choice > system preference > default dark
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+      root.setAttribute('data-theme', initialTheme);
+      toggleBtn.textContent = initialTheme === 'dark' ? 'light' : 'dark';
+
+      toggleBtn.addEventListener('click', function() {
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        toggleBtn.textContent = newTheme === 'dark' ? 'light' : 'dark';
+      });
+    })();
+  </script>
 </body>
 </html>
