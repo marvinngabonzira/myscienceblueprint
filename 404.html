@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 | The Science Blueprint</title>
-  <link rel="icon" href="assets/logo.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Page Not Found | Marvin Ngabonzira</title>
   <style>
-    .error-page {
-      min-height: 100vh;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: #111215;
+      color: #ededed;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
     }
-    .error-code {
-      font-family: var(--f-mono);
-      font-size: clamp(6rem, 20vw, 12rem);
-      font-weight: 700;
-      color: var(--cyan-25);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.05em;
-    }
-    .error-title { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 0.75rem; }
-    .error-body { font-size: 0.9rem; color: var(--text-2); max-width: 400px; margin: 0 auto 2rem; }
+    p { color: #8c9099; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    a { color: #60a5fa; text-decoration: none; font-size: 0.9rem; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="error-page">
-    <div>
-      <div class="error-code">404</div>
-      <h1 class="error-title">Signal Lost.</h1>
-      <p class="error-body">
-        This page doesn't exist - or was moved. Head back to the homepage and pick up the thread from there.
-      </p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-        <a href="index.html" class="btn btn-primary"><- Back to Home</a>
-        <a href="archive.html" class="btn btn-ghost">View the Archive</a>
-      </div>
-    </div>
+  <div>
+    <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Page Not Found</h1>
+    <p>This page doesn't exist or was moved during the site redesign.</p>
+    <a href="/">← Return to home</a>
   </div>
-  <script src="js/main.js"></script>
 </body>
 </html>
