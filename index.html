@@ -397,46 +397,25 @@
   </div>
 
   <!-- Minimal Dark/Light Mode Switcher -->
-  <script>
-    (function() {
-      const toggleBtn = document.getElementById('theme-toggle');
-      const root = document.documentElement;
-
-      // Determine initial theme: saved choice > system preference > default dark
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-      root.setAttribute('data-theme', initialTheme);
-      toggleBtn.textContent = initialTheme === 'dark' ? 'light' : 'dark';
-
-      toggleBtn.addEventListener('click', function() {
-        const currentTheme = root.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        toggleBtn.textContent = newTheme === 'dark' ? 'light' : 'dark';
-      });
-    })();
-  </script>
-  
 <script>
   (function() {
     const toggleBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
-    function updateBtnText() {
+    function syncButton() {
       const isDark = root.getAttribute('data-theme') === 'dark';
       toggleBtn.textContent = isDark ? 'light' : 'dark';
     }
 
-    updateBtnText();
+    // Set initial button label
+    syncButton();
 
     toggleBtn.addEventListener('click', function() {
-      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
       root.setAttribute('data-theme', nextTheme);
       localStorage.setItem('theme', nextTheme);
-      updateBtnText();
+      syncButton();
     });
   })();
 </script>
