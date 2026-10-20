@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvin Ngabonzira | Neural Engineering</title>
+  <meta name="description" content="Marvin Ngabonzira is a Mechatronics and Biomedical Engineering student at Kyambogo University interested in neural engineering and technologies that interact with the nervous system.">
+  <link rel="icon" href="assets/marvin1.ico" type="image/x-icon">
+
+  <!-- Open Graph / Link Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myscienceblueprint.com/">
+  <meta property="og:title" content="Marvin Ngabonzira">
+  <meta property="og:description" content="Mechatronics and Biomedical Engineering student at Kyambogo University interested in neural engineering.">
+  <meta property="og:image" content="https://myscienceblueprint.com/assets/marvin1.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Marvin Ngabonzira">
+  <meta name="twitter:description" content="Mechatronics and Biomedical Engineering student at Kyambogo University interested in neural engineering.">
+  <meta name="twitter:image" content="https://myscienceblueprint.com/assets/marvin1.png">
+
+  <!-- Instant Theme Setter (prevents white flash) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+
+  <!-- Clean, readable fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM - CLEAN EDITORIAL (LIGHT + REFINED DARK)
+       ============================================================ */
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #171717;
+      --text-muted: #666666;
+      --border: #e5e5e5;
+      --border-hover: #b3b3b3;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --tag-bg: #f3f4f6;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111215;
+      --surface: #18191e;
+      --text: #ededed;
+      --text-muted: #8c9099;
+      --border: #262830;
+      --border-hover: #3e414e;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --tag-bg: #1c1e24;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .wrapper {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* Header & Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2.5rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .theme-toggle:hover {
+      color: var(--text);
+      border-color: var(--border-hover);
+    }
+
+    /* Profile / Intro */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .profile-info h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-field {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-intro {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      max-width: 440px;
+    }
+
+    .profile-location {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Links Bar */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    /* Content Typography */
+    h2 {
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1.15rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    /* Item Blocks (Work, Papers, Experience) */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .item-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .item-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+    }
+
+    .item-link {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      margin-top: 0.35rem;
+      display: inline-block;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 2rem 1.2rem 4rem;
+      }
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .avatar {
+        width: 88px;
+        height: 88px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Top Theme Toggle -->
+    <div class="top-bar">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle visual theme">
+        theme
+      </button>
+    </div>
+
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <img src="assets/marvin1.png" alt="Marvin Ngabonzira" class="avatar" width="104" height="104">
+      <div class="profile-info">
+        <h1>Marvin Ngabonzira</h1>
+        <div class="profile-field">Neural Engineering</div>
+        <p class="profile-intro">I'm a Mechatronics and Biomedical Engineering student at Kyambogo University interested in developing technologies that interact with the nervous system to restore, replace or support neurological function.</p>
+        <div class="profile-location">Kampala, Uganda</div>
+      </div>
+    </header>
+
+    <!-- Clean Direct Links -->
+    <nav class="nav-links" aria-label="Social and academic links">
+      <a href="https://www.youtube.com/@marvinngabonzira" target="_blank" rel="noopener" class="nav-link">YouTube ↗</a>
+      <a href="https://orcid.org/0009-0000-2708-2825" target="_blank" rel="noopener" class="nav-link">ORCID ↗</a>
+      <a href="mailto:marvin@myscienceblueprint.com" class="nav-link">Email ↗</a>
+    </nav>
+
+    <!-- Bio -->
+    <section aria-labelledby="sec-about">
+      <h2 id="sec-about">About</h2>
+      <p>
+        I'm a Mechatronics and Biomedical Engineering student at Kyambogo University with an interest in neural engineering.
+      </p>
+      <p>
+        I'm interested in developing technologies that interact with the nervous system to restore, replace or support neurological functions. My broader aim is to help develop engineering systems that give people with neurological conditions greater function and independence.
+      </p>
+      <p>
+        I also make YouTube videos about neuroscience, brain-computer interfaces and biomedical technology.
+      </p>
+    </section>
+
+    <!-- Current Work -->
+    <section aria-labelledby="sec-current">
+      <h2 id="sec-current">Current Work</h2>
+      <div class="item-list">
+        <div class="item">
+          <div class="item-title">EEG-Based Classification for Parkinson's Disease Screening</div>
+          <div class="item-desc">
+            Investigating the potential of EEG-based classification to distinguish between people with Parkinson's disease and healthy controls, with the aim of exploring its possible role in future screening approaches.
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-title">Science and Technology Videos</div>
+          <div class="item-desc">
+            Creating videos exploring neuroscience, brain-computer interfaces and biomedical technology, with a focus on understanding how these technologies work and the science behind them. Find them on <a href="https://www.youtube.com/@marvinngabonzira" target="_blank" rel="noopener">YouTube</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research & Publications -->
+    <section aria-labelledby="sec-research">
+      <h2 id="sec-research">Publications & Reports</h2>
+      <div class="item-list">
+
+        <article class="item">
+          <div class="item-title">Neural Data Privacy and the Emerging Surveillance Risk of Brain-Computer Interfaces</div>
+          <div class="item-meta">Technical Report · 2026 · Zenodo</div>
+          <div class="item-desc">
+            Examines neural data privacy risks associated with brain-computer interfaces, focusing on surveillance, gaps in data protection and the need for neural data governance, particularly in Uganda and Sub-Saharan Africa.
+          </div>
+          <a href="https://doi.org/10.5281/zenodo.19058469" target="_blank" rel="noopener" class="item-link">
+            doi:10.5281/zenodo.19058469 ↗
+          </a>
+        </article>
+
+        <article class="item">
+          <div class="item-title">Automated First Aid Kit with Internal UV-C Sterilisation: Design, Construction, and Functional Verification</div>
+          <div class="item-meta">Technical Report · Revised 2026 · With Sylvia Nayiga & Godfrey Toolit Lukwiya · Supervised by Dr. Hussein Kafeero</div>
+          <div class="item-desc">
+            Documents a team engineering project involving the design and construction of an automated first aid kit with an internal UV-C system. The report covers the prototype's design and functional testing, while noting that its germicidal effectiveness was not experimentally validated.
+          </div>
+          <a href="https://doi.org/10.5281/zenodo.19149610" target="_blank" rel="noopener" class="item-link">
+            doi:10.5281/zenodo.19149610 ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Background & Experience -->
+    <section aria-labelledby="sec-background">
+      <h2 id="sec-background">Background</h2>
+      <div class="item-list">
+        <div class="item">
+          <div class="item-title">Kyambogo University</div>
+          <div class="item-meta">2023 – Present · Kampala, Uganda</div>
+          <div class="item-desc">
+            Bachelor of Engineering in Mechatronics and Biomedical Engineering.
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-title">St. Francis Hospital Nsambya</div>
+          <div class="item-meta">2026 · Biomedical Engineering Internship</div>
+          <div class="item-desc">
+            Participated in the inspection, maintenance, servicing, troubleshooting and repair of biomedical equipment in a clinical environment. Gained practical experience with equipment reliability, maintenance challenges and the role of biomedical engineering in healthcare delivery.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span>Marvin Ngabonzira</span>
+      <span>Kampala, Uganda</span>
+    </footer>
+  </div>
+
+  <!-- Minimal Dark/Light Mode Switcher -->
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    function syncButton() {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      toggleBtn.textContent = isDark ? 'light' : 'dark';
+    }
+
+    // Set initial button label
+    syncButton();
+
+    toggleBtn.addEventListener('click', function() {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+      syncButton();
+    });
+  })();
+</script>
+  
+</body>
+</html>
